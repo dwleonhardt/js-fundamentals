@@ -23,6 +23,7 @@ At the command line run:
 cd ~/workspace
 git clone git@github.com:gSchool/javascript-statements.git
 cd javascript-statements
+atom .
 open index.html
 ```
 
@@ -31,3 +32,30 @@ You'll see a page that looks like this:
 ![](https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/103/javascript-statements-passing-failing.png)
 
 Locate the area that shows how many tests are passing, and how many are failing.
+
+## How to proceed
+
+In your text editor, open `assignment.js`.
+
+You'll see instructions on how to proceed.  Write code to make each function pass the test, using the provided links to learn about how to do so.
+
+After making each change:
+
+- Tab over to the browser with `COMMAND+TAB`
+- Refresh the browser with `COMMAND+R`
+- Scroll to the first failing test (in red) and use the information provided to help you figure out what's next
+
+You will tab/refresh hundreds of times during this challenge.  Check your work after every small change :)
+
+## Wrestle with it
+
+You may encounter challenges that seem confusing, or impossible.  Don't fret - _that's the point_!!  This exercise is designed to challenge you.  Resist the urge to just copy/paste code from your classmates, but definitely ask for help and talk to your peers.
+
+## What success looks like
+
+When you are done, your page should look like this:
+
+![](https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/104/javascript-statements-passing.png)
+
+- All tests should be passing
+- You'll see green check boxes next to the things that are done
