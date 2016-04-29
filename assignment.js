@@ -3,7 +3,7 @@
 // Return the sum of those two arguments
 // Uncomment the code below by typing Command + /
 function sum(a,b) {
-  // return a + b;
+  return a + b;
 }
 
 
@@ -11,7 +11,7 @@ function sum(a,b) {
 // Define a function named product that takes two numbers as arguments
 // Return the product of those two arguments
 function product(a,b) {
-  // YOUR CODE HERE
+  return a * b;
 }
 
 
@@ -23,7 +23,7 @@ function product(a,b) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x,y,z) {
-
+  return (x + y) * z;
 }
 
 
@@ -32,7 +32,7 @@ function sumAndProduct(x,y,z) {
 // Return that number, rounded up
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
 function roundUp(num) {
-
+  return Math.ceil(num);
 }
 
 
@@ -42,7 +42,7 @@ function roundUp(num) {
 //
 // HINT: Use Google to find the formula
 function celsiusToFahrenheit(temp) {
-
+  return temp * (9/5) + 32;
 }
 
 
@@ -53,7 +53,7 @@ function celsiusToFahrenheit(temp) {
 // See https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=area%20of%20a%20circle
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
 function areaOfCircle(radius) {
-
+  return Math.PI * radius * radius;
 }
 
 
@@ -63,7 +63,7 @@ function areaOfCircle(radius) {
 //    - innerRadius
 // Returns the area of the donut
 function areaOfDonut(outerRadius, innerRadius) {
-
+  return areaOfCircle(outerRadius) - areaOfCircle(innerRadius);
 }
 
 
@@ -74,7 +74,7 @@ function areaOfDonut(outerRadius, innerRadius) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Template_strings
 //
 function greet(firstName, lastName) {
-
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 
@@ -89,7 +89,11 @@ function greet(firstName, lastName) {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
 //
 function toSentence(word1, word2, word3, oxfordComma){
-
+  if (oxfordComma) {
+    return word1 + ', ' + word2 + ', and ' + word3 + '.';
+  } else {
+    return word1 + ', ' + word2 + ' and ' + word3 + '.';
+  }
 }
 
 
@@ -101,16 +105,43 @@ function toSentence(word1, word2, word3, oxfordComma){
 //    Return null
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
-
-
-
-// Define a function named toRomanNumeral that takes one argument, an integer from 1-10
-// If the number is less than 1, return null
-// If the number is greater than 10, return null
-// Otherwise return the Roman Numeral that corresponds with the number given
 //
-// See https://en.wikipedia.org/wiki/Roman_numerals
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
+function toRomanNumeral(number){
+  switch (number) {
+    case 1:
+      return "I";
+      break;
+    case 2:
+      return "II";
+      break;
+    case 3:
+      return "III";
+      break;
+    case 4:
+      return "IV";
+      break;
+    case 5:
+      return "V";
+      break;
+    case 6:
+      return "VI";
+      break;
+    case 7:
+      return "VII";
+      break;
+    case 8:
+      return "VIII";
+      break;
+    case 9:
+      return "IX";
+      break;
+    case 10:
+      return "X";
+      break;
+    default:
+      return null;
+  }
+}
 
 
 
@@ -118,11 +149,17 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Return a string representation
 // Example: if you get 10, return "10.00"
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+function toDolla(num) {
+  return `$${num.toFixed(2)}`;
+}
 
 
 
 // Define a method named percentOf that takes two arguments
 // Returns a String in the format "10.02%" that represents the percentage of one number in another
+function percentOf(numerator, denominator) {
+  return (numerator / denominator * 100).toFixed(2) + '%'
+}
 
 
 
@@ -132,6 +169,9 @@ function toSentence(word1, word2, word3, oxfordComma){
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Strict_equality_using
 // See https://dorey.github.io/JavaScript-Equality-Table/
+function isStrictlyEqual(a,b) {
+  return a === b;
+}
 
 
 
@@ -139,6 +179,9 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Return true if the two arguments are both equal regardless of type
 // Otherwise return false
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using
+function isLooselyEqual(a, b) {
+  return a == b;
+}
 
 
 
@@ -146,6 +189,10 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Return the remainder of the first number divided by the second number
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
+//
+function remainder(x,y) {
+  return x % y;
+}
 
 
 
@@ -153,17 +200,26 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Return true if the number is even and false if it is not.
 //
 // Hint: What number will give you a remainder of 0 if it is even?
+function isEven(num) {
+  return num % 2 === 0;
+}
 
 
 
 // Define a function named isOdd that takes one argument that is a whole number
 // Return true if the number is odd and false if it is not.
+function isOdd(num) {
+  return num % 2 !== 0;
+}
 
 
 
 // Define a function named isVowel that takes one argument, a letter
 // Returns true if the letter is a vowel, and false if the letter is a consonant.
 // (Treat 'y' as a consonant)
+function isVowel(char) {
+  return char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u';
+}
 
 
 
@@ -171,6 +227,17 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Return the largest number
 //
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+function biggestOfThree(a,b,c) {
+  if (a > b && a > c) {
+    return a;
+  } else if (b > a && b > c){
+    return b;
+  } else {
+    return c;
+  }
+  // OR....
+  // return Math.max(a,b,c);
+}
 
 
 
@@ -179,6 +246,9 @@ function toSentence(word1, word2, word3, oxfordComma){
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+function biggestOfThreeStrings(a,b,c) {
+  return Math.max(a.length, b.length, c.length);
+}
 
 
 
@@ -193,6 +263,15 @@ function toSentence(word1, word2, word3, oxfordComma){
 //    return 'on top'
 //  If pieTemperature is 'warm'
 //    return 'on the side'
+function iceCreamPosition(pieTemperature, iceCreamFlavor) {
+  if (iceCreamFlavor === 'cardamom') {
+    return 'not at all';
+  } else if (pieTemperature === 'warm') {
+    return 'on the side';
+  }
+
+  return 'on top';
+}
 
 
 
@@ -200,6 +279,15 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Returns true if the year is a leap year, and false if not
 //
 // See: https://en.wikipedia.org/wiki/Leap_year#Algorithm
+function isLeapYear(year) {
+  if (year % 4 !== 0) {
+    return false;
+  } else if (year % 100 === 0 && year % 400 === 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 
 
@@ -209,6 +297,9 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Example: if you are given "Hello There", return "HELLO THERE"
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+function shout(input) {
+  return input.toUpperCase();
+}
 
 
 
@@ -218,6 +309,9 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Example: if you are given "Hello There", return "shhh... hello there"
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+function whisper(input) {
+  return "shhh... " + input.toLowerCase();
+}
 
 
 
@@ -236,6 +330,9 @@ function toSentence(word1, word2, word3, oxfordComma){
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+function stopAt(sourceString, stopString){
+  return sourceString.substring(0, sourceString.indexOf(stopString)).trim();
+}
 
 
 
@@ -245,6 +342,9 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Example: if you get "hello there" you would return "Hello there"
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+function capitalize(input) {
+  return input.substring(0,1).toUpperCase() + input.substring(1);
+}
 
 
 
@@ -256,6 +356,25 @@ function toSentence(word1, word2, word3, oxfordComma){
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
+//
+function leftPad5(input) {
+  switch (input.toString().length) {
+    case 1:
+      return '0000' + input.toString();
+      break;
+    case 2:
+      return '000' + input.toString();
+      break;
+    case 3:
+      return '00' + input.toString();
+      break;
+    case 4:
+      return '0' + input.toString();
+      break;
+    default:
+      return input.toString();
+  }
+}
 
 
 
@@ -269,6 +388,13 @@ function toSentence(word1, word2, word3, oxfordComma){
 // Example: If you pass true, return "Oh no!  I wanted a string, but got a boolean"
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+function pickyPickyString(input) {
+  if (typeof input === 'string') {
+    return 'Thanks!  Got it.';
+  } else {
+    return `Oh no!  I wanted a string, but got a ${typeof input}`;
+  }
+}
 
 
 
@@ -283,3 +409,19 @@ function toSentence(word1, word2, word3, oxfordComma){
 // otherwise
 //    use the table from http://www.efile.com/tax-service/tax-calculator/tax-brackets/
 //    to calculate the correct tax rate as a string (for example, "10%" OR "15%")
+function calculateTaxRate(salary, status) {
+  if (salary > 74900 || (status !== 'single' && status !== 'joint')) {
+    return 'better call an accountant';
+  }
+
+  switch (status) {
+    case 'single':
+      if (salary >= 1 && salary <= 9225) {
+        return '10%';
+      } else {
+        return '15%';
+      }
+    case 'joint':
+      return salary >= 1 && salary <= 18450 ? '10%' : '15%';
+  }
+}
