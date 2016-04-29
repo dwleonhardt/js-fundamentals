@@ -59,3 +59,13 @@ When you are done, your page should look like this:
 
 - All tests should be passing
 - You'll see green check boxes next to the things that are done
+
+## Stretch Goal
+
+Want more?  There's a _whole nother test suite_ just waiting for you!
+
+```
+open bonus.html
+```
+
+Then look at `bonus.js` to see what to do.  You know the drill :)
