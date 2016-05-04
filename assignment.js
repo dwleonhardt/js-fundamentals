@@ -2,7 +2,7 @@
 // Define a function named sum that takes two numbers as arguments
 // Return the sum of those two arguments
 // Uncomment the code below by typing Command + /
-function sum(a,b) {
+function sum(a, b) {
   return a + b;
 }
 
@@ -10,7 +10,7 @@ function sum(a,b) {
 
 // Define a function named product that takes two numbers as arguments
 // Return the product of those two arguments
-function product(a,b) {
+function product(a, b) {
   return a * b;
 }
 
@@ -22,7 +22,7 @@ function product(a,b) {
 // Example: if you are given 1, 2, 5 you would add 1 and 2 (which is 3) and multiply by 5, returning 15
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
-function sumAndProduct(x,y,z) {
+function sumAndProduct(x, y, z) {
   return (x + y) * z;
 }
 
@@ -41,7 +41,7 @@ function roundUp(num) {
 // Return a float that represents that temperature in Farenheit
 //
 // HINT: Use Google to find the formula
-function celsiusToFahrenheit(temp) {
+function toFahrenheit(temp) {
   return temp * (9/5) + 32;
 }
 
@@ -62,7 +62,7 @@ function areaOfCircle(radius) {
 //    - outerRadius
 //    - innerRadius
 // Returns the area of the donut
-function areaOfDonut(outerRadius, innerRadius) {
+function areaOfRing(outerRadius, innerRadius) {
   return areaOfCircle(outerRadius) - areaOfCircle(innerRadius);
 }
 
@@ -106,7 +106,7 @@ function toSentence(word1, word2, word3, oxfordComma){
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 //
-function toRomanNumeral(number){
+function toRoman(number){
   switch (number) {
     case 1:
       return "I";
@@ -157,8 +157,8 @@ function toDolla(num) {
 
 // Define a method named percentOf that takes two arguments
 // Returns a String in the format "10.02%" that represents the percentage of one number in another
-function percentOf(numerator, denominator) {
-  return (numerator / denominator * 100).toFixed(2) + '%'
+function percentage(numerator, denominator) {
+  return (numerator / denominator * 100).toFixed(1) + '%'
 }
 
 
@@ -227,7 +227,7 @@ function isVowel(char) {
 // Return the largest number
 //
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
-function biggestOfThree(a,b,c) {
+function largestOfThree(a,b,c) {
   if (a > b && a > c) {
     return a;
   } else if (b > a && b > c){
@@ -246,8 +246,18 @@ function biggestOfThree(a,b,c) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
-function biggestOfThreeStrings(a,b,c) {
-  return Math.max(a.length, b.length, c.length);
+function longestOfThree(a,b,c) {
+  var max = Math.max(a.length, b.length, c.length);
+
+  if (a.length === max) {
+    return a;
+  }
+  else if (b.length === max) {
+    return b;
+  }
+  else {
+    return c;
+  }
 }
 
 
@@ -360,16 +370,16 @@ function capitalize(input) {
 function leftPad5(input) {
   switch (input.toString().length) {
     case 1:
-      return '0000' + input.toString();
+      return '    ' + input.toString();
       break;
     case 2:
-      return '000' + input.toString();
+      return '   ' + input.toString();
       break;
     case 3:
-      return '00' + input.toString();
+      return '  ' + input.toString();
       break;
     case 4:
-      return '0' + input.toString();
+      return ' ' + input.toString();
       break;
     default:
       return input.toString();
@@ -388,11 +398,11 @@ function leftPad5(input) {
 // Example: If you pass true, return "Oh no!  I wanted a string, but got a boolean"
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
-function pickyPickyString(input) {
+function superPicky(input) {
   if (typeof input === 'string') {
-    return 'Thanks!  Got it.';
+    return 'Thanks! Got it.';
   } else {
-    return `Oh no!  I wanted a string, but got a ${typeof input}`;
+    return `I wanted a string, but all I got was a stinking ${typeof input}`;
   }
 }
 
@@ -411,7 +421,7 @@ function pickyPickyString(input) {
 //    to calculate the correct tax rate as a string (for example, "10%" OR "15%")
 function calculateTaxRate(salary, status) {
   if (salary > 74900 || (status !== 'single' && status !== 'joint')) {
-    return 'better call an accountant';
+    return 'Better call an accountant';
   }
 
   switch (status) {
