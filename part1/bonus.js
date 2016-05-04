@@ -1,28 +1,30 @@
 /*
+The purpose of this challenge is to be able to encrypt and decrypt a string using the Caesar Cipher.
 
-The purpose of this challenge is to be able to encrypt and decrypt a string, using a simple Caesar Cipher.
+See https://en.wikipedia.org/wiki/Caesar_cipher
 
-Read more here: https://en.wikipedia.org/wiki/Caesar_cipher
+Each letter has a numeric representation called an ASCII code. For example, the letter "a" has an ASCII code of 97 and the letter "b" has an ASCII code of 98.
 
-Each letter has what's called an ASCII Code - a numeric representation.  You can see them here http://www.asciitable.com/
+See http://www.asciitable.com/
 
-You'll just be working with lowercase letters (codes 97-122).
+For this problem, you can safely assume you'll just be working with lowercase letters. (i.e. codes 97 to 122)
 
-You can convert characters to ASCII codes, and ASCII codes to characters via these methods:
+To convert letters to ASCII codes and ASCII codes back to letters, check out these methods:
 
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
 
-The cipher works like so:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+
+The Caesar Cipher works like this:
 
 - If you get a string, such as "a", convert it to a number: 97
 - Add 13 to that number: 110
 - Figure out what character that number represents: 110 => "n"
 - So the final result is that "a" becomes "n"
 
-If, when you add 13 to the ASCII code, it's greater than 122 ("z"), you wrap around.  See the test for more context.
+If you add 13 to an ASCII code and it's greater than 122 (i.e. "z"), you'll need to wrap back around to the start of the alphabet. See the tests for context.
 
-You'll solve this cipher in a few steps.  Have fun!
+It'll take a few steps to solve this cipher. Have fun!
 */
 
 
