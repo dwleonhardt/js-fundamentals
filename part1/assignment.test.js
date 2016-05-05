@@ -43,15 +43,15 @@ window.onload = function() {
 
   suite('#areaOfCircle', function() {
     test('calculates the area of a ciricle', function() {
-      assert.equal(areaOfCircle(10), 314.1592653589793);
-      assert.equal(areaOfCircle(20), 1256.6370614359173);
+      assert.approximately(areaOfCircle(10), 314.1592653589793, 0.01);
+      assert.approximately(areaOfCircle(20), 1256.6370614359173, 0.01);
     });
   });
 
   suite('#areaOfRing', function() {
     test('calculates the the area of a circulur ring', function() {
-      assert.equal(areaOfRing(10, 5), 235.61944901923448);
-      assert.equal(areaOfRing(20, 17), 348.716784548467);
+      assert.approximately(areaOfRing(10, 5), 235.61944901923448, 0.01);
+      assert.approximately(areaOfRing(20, 17), 348.716784548467, 0.01);
     });
   });
 
