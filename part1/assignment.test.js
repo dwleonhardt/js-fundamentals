@@ -230,12 +230,21 @@ window.onload = function() {
 
   suite('#isLeapYear', function() {
     test('returns true if the number is a leap year, otherwise it does not', function() {
-      assert.equal(isLeapYear(1900), true);
+      assert.equal(isLeapYear(1904), true);
+      assert.equal(isLeapYear(1912), true);
+      assert.equal(isLeapYear(1928), true);
+      assert.equal(isLeapYear(1936), true);
+      assert.equal(isLeapYear(1940), true);
+      assert.equal(isLeapYear(1956), true);
+      assert.equal(isLeapYear(1964), true);
+      assert.equal(isLeapYear(1972), true);
+      assert.equal(isLeapYear(1980), true);
       assert.equal(isLeapYear(1996), true);
+      assert.equal(isLeapYear(2000), true);
     });
 
     test('returns false if the number is not a leap year', function() {
-      assert.equal(isLeapYear(2000), false);
+      assert.equal(isLeapYear(1900), false);
       assert.equal(isLeapYear(1901), false);
       assert.equal(isLeapYear(2001), false);
     });
