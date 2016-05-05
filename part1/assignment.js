@@ -42,7 +42,7 @@ function roundUp(decimal) {
 // Define a function named toFahrenheit that takes one argument
 //    celsius (number)
 //
-// Return the argument converted to Farenheit rounded to the nearest integer.
+// Return the argument converted to Fahrenheit rounded to the nearest integer.
 // Use Google to find the formula.
 function toFahrenheit(celsius) {
   return celsius * (9/5) + 32;
