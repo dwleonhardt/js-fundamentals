@@ -129,33 +129,58 @@ function distance(coord1, coord2) {
     Math.pow(coord1.y - coord2.y, 2));
 }
 
-
-// Define a function named contains that is given an array of numbers and a
-// number.
+// Define a function named contains that is given two arguments
+//     arr (array of strings)
+//     str (string)
 //
-// Returns true if that number exists in the array, false otherwise.
-function contains(arr, num) {
+// Returns true if that string exists in the array, false otherwise.
+function contains(arr, str) {
   for (var i = 0; i < arr.length; i++) {
-    if (i === num) {
+    if (arr[i] === str) {
       return true;
     }
   }
   return false;
 }
 
-// (NUMBERS)
-// Define a function named replace that takes in one arguments
-//    arr (array of strings)
-// Each string is a name of person who is assigned to work, and two strings, from and // to, replaces all places where the from string is located with the to string.
+// Define a function named replace that takes in three arguments
+//    arr (array of numbers)
+//    from (number)
+//    to (number)
 //
-// Example: Ken does not feel like working this week.
-// replace(['Ryan', 'Ken', 'Ken', 'Ian', 'Ryan', 'Ken'], 'Ken', 'Ryan') ->
-//    ['Ryan', 'Ryan', 'Ryan', 'Ian', 'Ryan', 'Ryan']
+// Returns an array of numbers where all elements of from are replaced with to
+// Example:
+// replace([1, 3, 2, 1, 3], 1, 4) -> [4, 3, 2, 4, 3]
+function replace(arr, from, to) {
+  var result = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === from) {
+      result.push(to);
+    } else {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
 
+// Define a function named filterPassingGrades that takes in one argument:
+//     grades (array of numbers)
+//
+// Return the array with only numbers greater than or equl to 70 (ie the passing
+// scores).
+function filterPassingGrades(arr) {
+  var result = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] >= 70) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
 
-
-// Define a function named pluck that is given an array of objects, and a
-// string, "key".
+// Define a function named pluck that takes in two arguments:
+//     arr (array of objects)
+//     key (string)
 //
 // Returns an array of elements where each element is the value in each object.
 //
@@ -166,9 +191,16 @@ function contains(arr, num) {
 //   {name: 'curly', age: 60}
 // ];
 // pluck(stooges, 'name') -> ['moe', 'larry', 'curly']
+function pluck(arr, key) {
+  var result = [];
+  for(var i = 0; i < arr.length; i++) {
+    result.push(arr[i][key])
+  }
+  return result;
+}
 
-
-// Define a function named flatten given an array of arrays (of anything).
+// Define a function named flatten given one argument:
+//     arr (array of arrays)
 //
 // Returns an array that combines all of the elements in the original arrays.
 //
@@ -176,34 +208,60 @@ function contains(arr, num) {
 //   flatten([[1], [2], [3], [4]]) -> [1, 2, 3, 4]
 //   flatten([[1], [2, 3], [4]]) -> [1, 2, 3, 4]
 // Tip: In the second example, we only need to flatten one level deep.
-// (ONE MORE EXAMPLE)
+//   flatten([[1], [2, [3]], [4]]) -> [1, 2, [3], 4]
+function flatten(arr) {
+  var result = [];
+  for(var i = 0; i < arr.length; i++) {
+    result = result.concat(arr[i]);
+  }
+  return result;
+}
 
-// (values function)
+// Define a function named values that takes in one argument:
+//    obj (object)
+//
+// Returns an array of the values of the object. For example, given
+// {a: 1, b: 2, c: 3}, it produces [1, 2, 3]
+function values(obj) {
+  var result = [];
+  for(var key in obj) {
+    result.push(obj[key]);
+  }
+  return result;
+}
 
-// Define a function named pick given an object and an array of strings, keys.
+// Define a function named pick that takes in two arguments:
+//    obj (object)
+//    keys (array of strings)
 //
 // Returns an object that only contains the keys specified.
 //
 // Example:
 // pick({name: 'moe', age: 50, userid: 'moe1'}, ['name', 'age'])
 //   -> {name: 'moe', age: 50}
+function pick(obj, keys) {
+  var result = {};
+  for(var i = 0; i < keys.length; i++) {
+    result[keys[i]] = obj[keys[i]];
+  }
+  return result;
+}
 
-
-
-// Define a function named filter that takes in an array of numbers.
+// Define a function named unique that takes in one argument:
+//    arr (array of strings)
 //
-// Return the array with only numbers greater than 100.
-
-// Define a function named unique that takes in an array of strings
-//
-// Return an array that contains each of the elements in the array but removes any
-// duplicate elements.
+// Return an array that contains each of the elements in the array but
+// removes any duplicate elements.
 //
 // Example:
-//   unique([1, 2, 1, 1, 2, 3]) -> [1, 2, 3]
-// (strings)
-function unique(arr) {
+//   unique(['a', 'b', 'a', 'c']) -> ['a', 'b', 'c']
 
+function unique(arr) {
+  var map = {};
+  for(var i = 0; i < arr.length; i++) {
+    map[arr[i]] = true;
+  }
+  return Object.keys(map);
 }
 
 // In the early days of Roman numerals, the Romans didn't bother with any of
@@ -226,9 +284,29 @@ function unique(arr) {
 //      5 = V
 //      1 = I
 //
-// TIP #2: Use the integer division and modulus methods will be helpful
+// TIP #2: Use the Math.floor and modulus methods will be helpful
+function oldSchoolRomanNumeral(num) {
+  var denominations = [
+    {letter: 'M', value: 1000},
+    {letter: 'D', value: 500},
+    {letter: 'C', value: 100},
+    {letter: 'L', value: 50},
+    {letter: 'X', value: 10},
+    {letter: 'V', value: 5},
+    {letter: 'I', value: 1}
+  ];
 
-
+  var result = ''
+  for(var i = 0; i < denominations.length; i++) {
+    var letterCount = Math.floor(num / denominations[i].value);
+    if (letterCount > 0) {
+      result += new Array(letterCount + 1).join(denominations[i].letter);
+      //result += letterCount.repeat(letterCount); ES6
+      num %= denominations[i].value;
+    }
+  }
+  return result;
+}
 
 // Eventually, someone thought it would be terribly clever if putting a smaller
 // number before a larger one meant you had to subtract the smaller one. As a
