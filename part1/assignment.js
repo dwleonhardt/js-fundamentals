@@ -161,7 +161,7 @@ function toDolla(amount) {
   return `$${amount.toFixed(2)}`;
 }
 
-// Define a method named percentage that takes two arguments
+// Define a function named percentage that takes two arguments
 //    numerator (number)
 //    denominator (number)
 //
@@ -360,8 +360,8 @@ function whisper(message) {
 //   source (string)
 //   stop (string)
 //
-// Return the source all the way up to where source starts. For example, given
-// 'how now brown cow' and 'brown', then return 'how now'.
+// Return the source all the way up to the position where stop begins. For
+// example, given 'how now brown cow' and 'brown', then return 'how now'.
 //
 // Hint: This will require a combination of 3 different steps
 //
@@ -415,7 +415,7 @@ function leftPad5(word) {
   }
 }
 
-// Define a method named superPicky that takes one argument
+// Define a function named superPicky that takes one argument
 //    value (anything)
 //
 // If the argument is a string,
