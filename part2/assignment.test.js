@@ -32,7 +32,7 @@ window.onload = function() {
     });
 
     test('calculates the max number in an empty array', function() {
-      assert.equal(max([]), Number.MIN_VALUE);
+      assert.equal(max([]), -Infinity);
     });
   });
 
@@ -43,7 +43,7 @@ window.onload = function() {
     });
 
     test('calculates the min number in an empty array', function() {
-      assert.equal(max([]), Number.MAX_VALUE);
+      assert.equal(min([]), Infinity);
     });
   });
 
@@ -64,26 +64,10 @@ window.onload = function() {
     });
   });
 
-  suite('#greet', function() {
-    test('greets a person by their full name', function() {
-      assert.equal(greet('Bart', 'Simpson'), 'Hello, Bart Simpson!');
-      assert.equal(greet('Mona', 'Lisa'), 'Hello, Mona Lisa!');
-    });
-  });
-
-  suite('#merge', function() {
-    test('merges two sorted arrays', function() {
-      assert.equal(merge([1, 3, 5], [2, 4, 6]), [1, 2, 3, 4, 5, 6]);
-      assert.equal(merge([1, 3, 5], [1, 2]), [1, 1, 2, 3, 4, 5]);
-      assert.equal(merge([], [1, 2]), [1, 2]);
-      assert.equal(merge([1, 2], []), [1, 2]);
-    });
-  });
-
   suite('#distance', function() {
     test('returns the distance between two points', function() {
-      assert.equal(distance({x: 0, y: 3}, {x: 0, y: 0}), 3);
-      assert.equal(distance({x: -1, y: 1}, {x: 0, y: 0}), Math.sqrt(2));
+      assert.approximately(distance({x: 0, y: 3}, {x: 0, y: 0}), 3, 0.01);
+      assert.approximately(distance({x: -1, y: 1}, {x: 0, y: 0}), Math.sqrt(2), 0.01);
     });
   });
 
@@ -193,6 +177,15 @@ window.onload = function() {
       assert.equal(isVowel('b'), false);
       assert.equal(isVowel('d'), false);
       assert.equal(isVowel('y'), false);
+    });
+  });
+
+  suite('#merge', function() {
+    test('merges two sorted arrays', function() {
+      assert.equal(merge([1, 3, 5], [2, 4, 6]), [1, 2, 3, 4, 5, 6]);
+      assert.equal(merge([1, 3, 5], [1, 2]), [1, 1, 2, 3, 4, 5]);
+      assert.equal(merge([], [1, 2]), [1, 2]);
+      assert.equal(merge([1, 2], []), [1, 2]);
     });
   });
 
