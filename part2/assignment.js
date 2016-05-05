@@ -129,6 +129,20 @@ function distance(coord1, coord2) {
     Math.pow(coord1.y - coord2.y, 2));
 }
 
+// Define a function named repeat that takes in two arguments
+//     str (string)
+//     times (positive number)
+//
+// Returns a string that is the input string repeated multiple times. For
+// example, given 'hi' and 4, it should produce 'hihihihi'
+function repeat(str, times) {
+  var result = '';
+  for(var i = 0; i < times; i++) {
+    result += str;
+  }
+  return result;
+}
+
 // Define a function named contains that is given two arguments
 //     arr (array of strings)
 //     str (string)
@@ -268,7 +282,9 @@ function unique(arr) {
 // this new-fangled subtraction 'IX' nonsense. No sir, it was straight addition,
 // biggest to littlest - so 9 was written 'VIIII' and so on.
 //
-// Define a method that, when passed any integer between 1 and 1000.
+// Define a method that takes in one argument
+//     num (number between 1 and 1000)
+//
 // Return a string that represents the roman numeral in the old school format.
 //
 // Example:
@@ -285,6 +301,7 @@ function unique(arr) {
 //      1 = I
 //
 // TIP #2: Use the Math.floor and modulus methods will be helpful
+// TIP #3: You may like to use the repeat function that you defined above.
 function oldSchoolRomanNumeral(num) {
   var denominations = [
     {letter: 'M', value: 1000},
@@ -300,8 +317,8 @@ function oldSchoolRomanNumeral(num) {
   for(var i = 0; i < denominations.length; i++) {
     var letterCount = Math.floor(num / denominations[i].value);
     if (letterCount > 0) {
-      result += new Array(letterCount + 1).join(denominations[i].letter);
-      //result += letterCount.repeat(letterCount); ES6
+      result += repeat(denominations[i].letter, letterCount);
+      //result += denominations[i].letter.repeat(letterCount); ES6
       num %= denominations[i].value;
     }
   }
@@ -334,3 +351,32 @@ function oldSchoolRomanNumeral(num) {
 //      5 = V
 //      4 = IV
 //      1 = I
+// TIP #3: You may like to use the repeat function that you defined above.
+function newSchoolRomanNumeral(num) {
+  var denominations = [
+    {letter: 'M', value: 1000},
+    {letter: 'CM', value: 900},
+    {letter: 'D', value: 500},
+    {letter: 'CD', value: 400},
+    {letter: 'C', value: 100},
+    {letter: 'XC', value: 90},
+    {letter: 'L', value: 50},
+    {letter: 'XL', value: 40},
+    {letter: 'X', value: 10},
+    {letter: 'IX', value: 9},
+    {letter: 'V', value: 5},
+    {letter: 'IV', value: 4},
+    {letter: 'I', value: 1}
+  ];
+
+  var result = ''
+  for(var i = 0; i < denominations.length; i++) {
+    var letterCount = Math.floor(num / denominations[i].value);
+    if (letterCount > 0) {
+      result += repeat(denominations[i].letter, letterCount);
+      //result += denominations[i].letter.repeat(letterCount); ES6
+      num %= denominations[i].value;
+    }
+  }
+  return result;
+}

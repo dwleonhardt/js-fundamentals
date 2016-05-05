@@ -71,6 +71,14 @@ window.onload = function() {
     });
   });
 
+  suite('#repeat', function() {
+    test('repeats a string multiple times', function() {
+      assert.equal(repeat('hi', 4), 'hihihihi');
+      assert.equal(repeat('ken', 3), 'kenkenken');
+      assert.equal(repeat('hello', 1), 'hello');
+    });
+  });
+
   suite('#contains', function() {
     test('checks if a string is in the array', function() {
       assert.equal(contains(['Ryan', 'Ken', 'Ian'], 'Ken'), true);
@@ -180,7 +188,7 @@ window.onload = function() {
       assert.equal(newSchoolRomanNumeral(72), 'LXXII');
       assert.equal(newSchoolRomanNumeral(134), 'CXXXIV');
       assert.equal(newSchoolRomanNumeral(273), 'CCLXXIII');
-      assert.equal(newSchoolRomanNumeral(749), 'DCCXCVIV');
+      assert.equal(newSchoolRomanNumeral(749), 'DCCXLIX');
       assert.equal(newSchoolRomanNumeral(1000), 'M');
     });
   });
