@@ -39,7 +39,7 @@ It'll take a few steps to solve this cipher. Have fun!
 //  Return the number plus 13
 //
 // Example: caesarAdd13(97) => 110
-// Example: caesarAdd13(110) => 98
+// Example: caesarAdd13(110) => 97
 function caesarAdd13(number){
   var lowestCharCode = 97;
   var highestCharCode = 122;
@@ -71,7 +71,7 @@ function caesarAdd13(number){
 //  Return the number minus 13
 //
 // Example: caesarSubtract13(97) => 110
-// Example: caesarSubtract13(110) => 98
+// Example: caesarSubtract13(110) => 97
 function caesarSubtract13(number){
   var lowestCharCode = 97;
   var highestCharCode = 122;
