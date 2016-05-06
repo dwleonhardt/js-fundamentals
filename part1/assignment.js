@@ -140,10 +140,10 @@ function toRoman(arabic) {
   }
 }
 
-// Define a function toDolla that takes one number argument
+// Define a function toDolla that takes one argument
 //    amount (number)
 //
-// Return the argument converted to dollar currency string. For example, given
+// Return the argument converted to a dollar currency string. For example, given
 // 10, then return '$10.00'.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
