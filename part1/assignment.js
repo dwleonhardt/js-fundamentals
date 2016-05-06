@@ -384,7 +384,7 @@ function stopAt(source, stop) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 function capitalize(message) {
-  return message.substring(0, 1).toUpperCase() + message.substring(1);
+  return message[0].toUpperCase() + message.substring(1);
 }
 
 // Define a function named leftPad5 that takes one argument
