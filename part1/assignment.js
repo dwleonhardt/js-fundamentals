@@ -45,7 +45,7 @@ function roundUp(decimal) {
 // Return the argument converted to Fahrenheit rounded to the nearest integer.
 // Use Google to find the formula.
 function toFahrenheit(celsius) {
-  return celsius * (9/5) + 32;
+  return Math.round(celsius * (9 / 5) + 32);
 }
 
 // Define a function named areaOfCircle that takes one argument

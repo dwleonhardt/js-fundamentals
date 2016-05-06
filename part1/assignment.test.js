@@ -37,6 +37,7 @@ window.onload = function() {
   suite('#toFahrenheit', function() {
     test('converts the Celsius to Fahrenheit rounded to the nearest integer', function() {
       assert.equal(toFahrenheit(30), 86);
+      assert.equal(toFahrenheit(31), 88);
       assert.equal(toFahrenheit(-5), 23);
     });
   });
