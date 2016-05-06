@@ -55,5 +55,27 @@ window.onload = function() {
     });
   });
 
+  suite('#newSchoolRomanNumeral', function() {
+    test('converts a number to a roman numeral in the new school format', function() {
+      assert.strictEqual(newSchoolRomanNumeral(1), 'I');
+      assert.strictEqual(newSchoolRomanNumeral(2), 'II');
+      assert.strictEqual(newSchoolRomanNumeral(4), 'IV');
+      assert.strictEqual(newSchoolRomanNumeral(5), 'V');
+      assert.strictEqual(newSchoolRomanNumeral(6), 'VI');
+      assert.strictEqual(newSchoolRomanNumeral(9), 'IX');
+      assert.strictEqual(newSchoolRomanNumeral(10), 'X');
+      assert.strictEqual(newSchoolRomanNumeral(11), 'XI');
+      assert.strictEqual(newSchoolRomanNumeral(15), 'XV');
+      assert.strictEqual(newSchoolRomanNumeral(16), 'XVI');
+      assert.strictEqual(newSchoolRomanNumeral(52), 'LII');
+      assert.strictEqual(newSchoolRomanNumeral(72), 'LXXII');
+      assert.strictEqual(newSchoolRomanNumeral(72), 'LXXII');
+      assert.strictEqual(newSchoolRomanNumeral(134), 'CXXXIV');
+      assert.strictEqual(newSchoolRomanNumeral(273), 'CCLXXIII');
+      assert.strictEqual(newSchoolRomanNumeral(749), 'DCCXLIX');
+      assert.strictEqual(newSchoolRomanNumeral(1000), 'M');
+    });
+  });
+
   mocha.run();
 }

@@ -25,6 +25,40 @@ window.onload = function() {
     });
   });
 
+  suite('#repeat', function() {
+    test('repeats a string multiple times', function() {
+      assert.strictEqual(repeat('hi', 4), 'hihihihi');
+      assert.strictEqual(repeat('ken', 3), 'kenkenken');
+      assert.strictEqual(repeat('hello', 1), 'hello');
+    });
+  });
+
+  suite('#filterPassingGrades', function() {
+    test('filters all passing grades', function() {
+      assert.deepEqual(filterPassingGrades([]), []);
+      assert.deepEqual(filterPassingGrades([100, 45, 90, 60]), [100, 90]);
+      assert.deepEqual(filterPassingGrades([100, 45, 70]), [100, 70]);
+      assert.deepEqual(filterPassingGrades([0, 45, 40]), []);
+    });
+  });
+
+  suite('#replace', function() {
+    test('replaces values in an array with another', function() {
+      assert.deepEqual(replace([1, 3, 2, 1, 3], 1, 4), [4, 3, 2, 4, 3]);
+      assert.deepEqual(replace([], 1, 4), []);
+      assert.deepEqual(replace([1, 3, 2, 1, 3], 4, 1), [1, 3, 2, 1, 3]);
+    });
+  });
+
+  suite('#flatten', function() {
+    test('flattens an array of arrays', function() {
+      assert.deepEqual(flatten([]), []);
+      assert.deepEqual(flatten([[1], [2], [3], [4]]), [1, 2, 3, 4]);
+      assert.deepEqual(flatten([[1], [2, 3], [4]]), [1, 2, 3, 4]);
+      assert.deepEqual(flatten([[1], [2], [3, [[4]]]]), [1, 2, 3, [[4]]]);
+    });
+  });
+
   suite('#max', function() {
     test('calculates the max number in an array', function() {
       assert.strictEqual(max([1, 2, 3, 4, 3]), 4);
@@ -64,21 +98,6 @@ window.onload = function() {
     });
   });
 
-  suite('#distance', function() {
-    test('returns the distance between two points', function() {
-      assert.approximately(distance({x: 0, y: 3}, {x: 0, y: 0}), 3, 0.01);
-      assert.approximately(distance({x: -1, y: 1}, {x: 0, y: 0}), Math.sqrt(2), 0.01);
-    });
-  });
-
-  suite('#repeat', function() {
-    test('repeats a string multiple times', function() {
-      assert.strictEqual(repeat('hi', 4), 'hihihihi');
-      assert.strictEqual(repeat('ken', 3), 'kenkenken');
-      assert.strictEqual(repeat('hello', 1), 'hello');
-    });
-  });
-
   suite('#contains', function() {
     test('checks if a string is in the array', function() {
       assert.strictEqual(contains(['Ryan', 'Ken', 'Ian'], 'Ken'), true);
@@ -87,20 +106,18 @@ window.onload = function() {
     });
   });
 
-  suite('#replace', function() {
-    test('replaces values in an array with another', function() {
-      assert.deepEqual(replace([1, 3, 2, 1, 3], 1, 4), [4, 3, 2, 4, 3]);
-      assert.deepEqual(replace([], 1, 4), []);
-      assert.deepEqual(replace([1, 3, 2, 1, 3], 4, 1), [1, 3, 2, 1, 3]);
+  suite('#distance', function() {
+    test('returns the distance between two points', function() {
+      assert.approximately(distance({x: 0, y: 3}, {x: 0, y: 0}), 3, 0.01);
+      assert.approximately(distance({x: -1, y: 1}, {x: 0, y: 0}), Math.sqrt(2), 0.01);
     });
   });
 
-  suite('#filterPassingGrades', function() {
-    test('filters all passing grades', function() {
-      assert.deepEqual(filterPassingGrades([]), []);
-      assert.deepEqual(filterPassingGrades([100, 45, 90, 60]), [100, 90]);
-      assert.deepEqual(filterPassingGrades([100, 45, 70]), [100, 70]);
-      assert.deepEqual(filterPassingGrades([0, 45, 40]), []);
+  suite('#values', function() {
+    test('returns values of an object', function() {
+      assert.deepEqual(values({}), []);
+      assert.deepEqual(values({a: 1, b: 'foo'}), [1, 'foo']);
+      assert.deepEqual(values({b: 'foo'}), ['foo']);
     });
   });
 
@@ -113,23 +130,6 @@ window.onload = function() {
         {name: 'curly', age: 60}
       ];
       assert.deepEqual(pluck(stooges, 'name'), ['moe', 'larry', 'curly']);
-    });
-  });
-
-  suite('#flatten', function() {
-    test('flattens an array of arrays', function() {
-      assert.deepEqual(flatten([]), []);
-      assert.deepEqual(flatten([[1], [2], [3], [4]]), [1, 2, 3, 4]);
-      assert.deepEqual(flatten([[1], [2, 3], [4]]), [1, 2, 3, 4]);
-      assert.deepEqual(flatten([[1], [2], [3, [[4]]]]), [1, 2, 3, [[4]]]);
-    });
-  });
-
-  suite('#values', function() {
-    test('returns values of an object', function() {
-      assert.deepEqual(values({}), []);
-      assert.deepEqual(values({a: 1, b: 'foo'}), [1, 'foo']);
-      assert.deepEqual(values({b: 'foo'}), ['foo']);
     });
   });
 
@@ -170,28 +170,6 @@ window.onload = function() {
       assert.strictEqual(oldSchoolRomanNumeral(1000), 'M');
     });
   });
-
-  suite('#newSchoolRomanNumeral', function() {
-    test('converts a number to a roman numeral in the new school format', function() {
-      assert.strictEqual(newSchoolRomanNumeral(1), 'I');
-      assert.strictEqual(newSchoolRomanNumeral(2), 'II');
-      assert.strictEqual(newSchoolRomanNumeral(4), 'IV');
-      assert.strictEqual(newSchoolRomanNumeral(5), 'V');
-      assert.strictEqual(newSchoolRomanNumeral(6), 'VI');
-      assert.strictEqual(newSchoolRomanNumeral(9), 'IX');
-      assert.strictEqual(newSchoolRomanNumeral(10), 'X');
-      assert.strictEqual(newSchoolRomanNumeral(11), 'XI');
-      assert.strictEqual(newSchoolRomanNumeral(15), 'XV');
-      assert.strictEqual(newSchoolRomanNumeral(16), 'XVI');
-      assert.strictEqual(newSchoolRomanNumeral(52), 'LII');
-      assert.strictEqual(newSchoolRomanNumeral(72), 'LXXII');
-      assert.strictEqual(newSchoolRomanNumeral(72), 'LXXII');
-      assert.strictEqual(newSchoolRomanNumeral(134), 'CXXXIV');
-      assert.strictEqual(newSchoolRomanNumeral(273), 'CCLXXIII');
-      assert.strictEqual(newSchoolRomanNumeral(749), 'DCCXLIX');
-      assert.strictEqual(newSchoolRomanNumeral(1000), 'M');
-    });
-  });
-
+  
   mocha.run();
 };
