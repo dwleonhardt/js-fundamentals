@@ -271,7 +271,7 @@ function largestOfThree(value1, value2, value3) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function longestOfThree(value1, value2, value3) {
-  var max = Math.max(value1.length, value2.length, value3.length);
+  var max = largestOfThree(value1.length, value2.length, value3.length);
 
   if (value1.length === max) {
     return value1;
