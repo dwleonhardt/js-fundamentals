@@ -117,34 +117,24 @@ function toRoman(arabic) {
   switch (arabic) {
     case 1:
       return "I";
-      break;
     case 2:
       return "II";
-      break;
     case 3:
       return "III";
-      break;
     case 4:
       return "IV";
-      break;
     case 5:
       return "V";
-      break;
     case 6:
       return "VI";
-      break;
     case 7:
       return "VII";
-      break;
     case 8:
       return "VIII";
-      break;
     case 9:
       return "IX";
-      break;
     case 10:
       return "X";
-      break;
     default:
       return null;
   }
@@ -394,24 +384,16 @@ function capitalize(message) {
 //    Return the argument but prefixed with spaces until it's 5 characters long
 // If the argument's length is 5 or more characters
 //    Return the argument
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 function leftPad5(word) {
   switch (word.length) {
     case 1:
       return '    ' + word;
-      break;
     case 2:
       return '   ' + word;
-      break;
     case 3:
       return '  ' + word;
-      break;
     case 4:
       return ' ' + word;
-      break;
     default:
       return word;
   }
