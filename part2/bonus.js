@@ -1,4 +1,3 @@
-
 // Define a function named group that takes in two arguments:
 //     arr (an array of objects)
 //     key (string)
@@ -66,13 +65,13 @@ function merge(arr1, arr2) {
   return output;
 }
 
-// Write a function named bigSum that takes in an arbitrary number of
+// Define a function named bigSum that takes in an arbitrary number of
 // parameters. We can assume all parameters are numbers.
 //
 // Returns the sum of all of the parameters. For example
 // bigSum(1, 2, 3, 4) produces 10.
 // If there are no parameters, return 0.
-// Tip: Think about how this is different from sum.
+// Tip: Think about how this is different from sum function in the assignment.
 function bigSum() {
   var sum = 0;
   for(var i = 0; i < arguments.length; i++) {
