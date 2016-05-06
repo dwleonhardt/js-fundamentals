@@ -73,6 +73,7 @@ function filterPassingGrades(arr) {
       result.push(arr[i]);
     }
   }
+
   return result;
 }
 
@@ -231,6 +232,43 @@ function distance(point1, point2) {
   return Math.sqrt(xSquared + ySquared);
 }
 
+// Define a function named combine that takes in two arguments.
+//    obj1 (object)
+//    obj2 (object)
+//
+// Return a new object that has the key-value pairs of both objects. For
+// example, given { a: 1 } and { b: 2 }, then return { a: 1, b: 2 }.
+function combine(obj1, obj2) {
+  var object = {};
+
+  for (var key in obj1) {
+    object[key] = obj1[key];
+  }
+
+  for (var key in obj2) {
+    object[key] = obj2[key];
+  }
+
+  return object;
+}
+
+// Define a function called invert that takes in one argument.
+//    obj (object)
+//
+// Return a new object where the keys and values of the argument are inverted.
+// For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
+function invert(obj) {
+  var object = {};
+  var value;
+
+  for (var key in obj) {
+    value = obj[key];
+    object[value] = key;
+  }
+
+  return object;
+}
+
 // Define a function named values that takes in one argument.
 //    obj (object)
 //
@@ -244,6 +282,40 @@ function values(obj) {
   }
 
   return result;
+}
+
+// Define a function called toPairs that takes in one argument.
+//    obj (object)
+//
+// Return a new array where each element is key-value pair array of the
+// argument. For example, given { a: 1, b: 2 }, then return
+// [['a', 1], ['b', 2]].
+function toPairs(obj) {
+  var array = [];
+  var pair;
+
+  for (key in obj) {
+    pair = [key, obj[key]];
+    array.push(pair);
+  }
+
+  return array;
+}
+
+// Define a function called fromPairs that takes in one argument.
+//    arr (array)
+//
+// Return a new object where each key-value pair is a from an element in the
+// argument. For example, given [['a', 1], ['b', 2]], then return
+// { a: 1, b: 2 }.
+function fromPairs(arr) {
+  var object = {};
+
+  for (var i = 0; i < arr.length; i++) {
+    object[arr[i][0]] = arr[i][1];
+  }
+
+  return object;
 }
 
 // Define a function named pluck that takes in two arguments.
@@ -348,6 +420,6 @@ function oldSchoolRomanNumeral(num) {
       num %= denominations[i].value;
     }
   }
-  
+
   return result;
 }

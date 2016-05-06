@@ -113,6 +113,40 @@ window.onload = function() {
     });
   });
 
+  suite('#combine', function() {
+    test('returns the combination of key-value pairs from two objects', function() {
+      assert.deepEqual(combine({a: 1}, {}), {a: 1});
+      assert.deepEqual(combine({}, {b: 2}), {b: 2});
+      assert.deepEqual(combine({a: 1}, {b: 2}), {a: 1, b: 2});
+      assert.deepEqual(combine({a: 1}, {a: 2}), {a: 2});
+      assert.deepEqual(combine({}, {}), {});
+    })
+  });
+
+  suite('#invert', function() {
+    test('returns a new object where the keys and values are inverted', function() {
+      assert.deepEqual(invert({a: 1}), {'1': 'a'});
+      assert.deepEqual(invert({a: 1, b: 2}), {'1': 'a', '2': 'b'});
+      assert.deepEqual(invert({}), {});
+    });
+  });
+
+  suite('#toPairs', function() {
+    test('returns a new array where each element is a key-value pair array', function() {
+      assert.deepEqual(toPairs({a: 1}), [['a', 1]]);
+      assert.deepEqual(toPairs({a: 1, b: 2}), [['a', 1], ['b', 2]]);
+      assert.deepEqual(toPairs({}), []);
+    });
+  });
+
+  suite('#fromPairs', function() {
+    test('returns a new object where each key-value pair is an element in an array', function() {
+      assert.deepEqual(fromPairs([['a', 1]]), {a: 1});
+      assert.deepEqual(fromPairs([['a', 1], ['b', 2]]), {a: 1, b: 2});
+      assert.deepEqual(fromPairs([]), {});
+    });
+  });
+
   suite('#values', function() {
     test('returns values of an object', function() {
       assert.deepEqual(values({}), []);
@@ -170,6 +204,6 @@ window.onload = function() {
       assert.strictEqual(oldSchoolRomanNumeral(1000), 'M');
     });
   });
-  
+
   mocha.run();
 };
