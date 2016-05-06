@@ -40,11 +40,11 @@ function concatenate(arr) {
 // Define a function named max that takes in one argument.
 //    arr (array of numbers)
 //
+// Return a the maximum number in the array. For example, given [1, 2, -3, 4], // it produces 4.
+//
 // Tip: Assume that if the array is empty, we use the -Infinity in JavaScript.
 // Tip: You might find Math.max handy.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
-//
-// Return a the maximum number in the array. For example, given [1, 2, -3, 4], // it produces 4.
 function max(arr) {
   var val = -Infinity
   for(var i = 0; i < arr.length; i++) {
@@ -58,12 +58,12 @@ function max(arr) {
 // Define a function named min that takes in one argument.
 //    arr (array of numbers)
 //
+// Return a the minimum number in the array. For example, given [1, 2, -3, 4],
+// it produces -3.
+//
 // Tip: Assume that if the array is empty, we use Infinity in JavaScript.
 // Tip: You might find Math.min handy.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
-//
-// Return a the minimum number in the array. For example, given [1, 2, -3, 4],
-// it produces -3.
 function min(arr) {
   var val = Infinity
   for(var i = 0; i < arr.length; i++) {
