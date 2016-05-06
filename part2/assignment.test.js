@@ -63,9 +63,6 @@ window.onload = function() {
     test('calculates the max number in an array', function() {
       assert.strictEqual(max([1, 2, 3, 4, 3]), 4);
       assert.strictEqual(max([1, 2, 3, -4, 3]), 3);
-    });
-
-    test('calculates the max number in an empty array', function() {
       assert.strictEqual(max([]), -Infinity);
     });
   });
@@ -74,9 +71,6 @@ window.onload = function() {
     test('calculates the min number in an array', function() {
       assert.strictEqual(min([1, 2, 3, 4, 3]), 1);
       assert.strictEqual(min([1, 2, 3, -4, 3]), -4);
-    });
-
-    test('calculates the min number in an empty array', function() {
       assert.strictEqual(min([]), Infinity);
     });
   });
@@ -180,28 +174,6 @@ window.onload = function() {
       assert.sameMembers(unique([]), []);
       assert.sameMembers(unique(['a', 'b', 'a', 'c']), ['a', 'b', 'c']);
       assert.sameMembers(unique(['a', 'b', 'c']), ['a', 'b', 'c']);
-    });
-  });
-
-  suite('#oldSchoolRomanNumeral', function() {
-    test('converts a number to a roman numeral in the old school format', function() {
-      assert.strictEqual(oldSchoolRomanNumeral(1), 'I');
-      assert.strictEqual(oldSchoolRomanNumeral(2), 'II');
-      assert.strictEqual(oldSchoolRomanNumeral(4), 'IIII');
-      assert.strictEqual(oldSchoolRomanNumeral(5), 'V');
-      assert.strictEqual(oldSchoolRomanNumeral(6), 'VI');
-      assert.strictEqual(oldSchoolRomanNumeral(9), 'VIIII');
-      assert.strictEqual(oldSchoolRomanNumeral(10), 'X');
-      assert.strictEqual(oldSchoolRomanNumeral(11), 'XI');
-      assert.strictEqual(oldSchoolRomanNumeral(15), 'XV');
-      assert.strictEqual(oldSchoolRomanNumeral(16), 'XVI');
-      assert.strictEqual(oldSchoolRomanNumeral(52), 'LII');
-      assert.strictEqual(oldSchoolRomanNumeral(72), 'LXXII');
-      assert.strictEqual(oldSchoolRomanNumeral(72), 'LXXII');
-      assert.strictEqual(oldSchoolRomanNumeral(134), 'CXXXIIII');
-      assert.strictEqual(oldSchoolRomanNumeral(273), 'CCLXXIII');
-      assert.strictEqual(oldSchoolRomanNumeral(749), 'DCCXXXXVIIII');
-      assert.strictEqual(oldSchoolRomanNumeral(1000), 'M');
     });
   });
 

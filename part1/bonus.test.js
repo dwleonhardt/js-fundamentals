@@ -133,12 +133,11 @@ window.onload = function() {
 
   suite("#decodeMessage", function(){
     test("it encodes a message", function(){
-      assert.equal(encodeMessage("jbj guvf vf pbby"),  "wow this is cool");
-      assert.equal(encodeMessage("fhcre frperg"),  "super secret");
-      assert.equal(encodeMessage("uryyb, gurer!"),  "hello, there!");
+      assert.equal(decodeMessage("jbj guvf vf pbby"),  "wow this is cool");
+      assert.equal(decodeMessage("fhcre frperg"),  "super secret");
+      assert.equal(decodeMessage("uryyb, gurer!"),  "hello, there!");
     });
   });
 
   mocha.run();
-
 };
