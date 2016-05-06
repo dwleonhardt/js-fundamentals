@@ -295,14 +295,18 @@ function longestOfThree(value1, value2, value3) {
 //      Return 'on top'
 //    If pieTemperature is 'warm'
 //      Return 'on the side'
+// Otherwise
+//    Return 'up to you'
 function iceCreamPosition(pieTemperature, iceCreamFlavor) {
   if (iceCreamFlavor === 'cardamom') {
     return 'not at all';
   } else if (pieTemperature === 'warm') {
     return 'on the side';
+  } else if (pieTemperature === 'cold') {
+    return 'on top';
   }
 
-  return 'on top';
+  return 'up to you';
 }
 
 // Define a function named isLeapYear that takes one argument

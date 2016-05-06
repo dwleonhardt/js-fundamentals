@@ -227,6 +227,11 @@ window.onload = function() {
       assert.equal(iceCreamPosition('cold', 'vanilla'), 'on top');
       assert.equal(iceCreamPosition('cold', 'chocolate'), 'on top');
     });
+
+    test('returns "up to you" if the pie temperature is neither warm or cold', function() {
+      assert.equal(iceCreamPosition('luke warm', 'vanilla'), 'up to you');
+      assert.equal(iceCreamPosition('ice cold', 'chocolate'), 'up to you');
+    });
   });
 
   suite('#isLeapYear', function() {
