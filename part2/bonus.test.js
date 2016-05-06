@@ -20,6 +20,14 @@ window.onload = function() {
     });
   });
 
+  suite('#unique', function() {
+    test('returns an array with only unique values', function() {
+      assert.sameMembers(unique([]), []);
+      assert.sameMembers(unique(['a', 'b', 'a', 'c']), ['a', 'b', 'c']);
+      assert.sameMembers(unique(['a', 'b', 'c']), ['a', 'b', 'c']);
+    });
+  });
+
   suite('#oldSchoolRomanNumeral', function() {
     test('converts a number to a roman numeral in the old school format', function() {
       assert.strictEqual(oldSchoolRomanNumeral(1), 'I');

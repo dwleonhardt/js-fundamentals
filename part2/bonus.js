@@ -43,6 +43,22 @@ function merge(arr1, arr2) {
   return output;
 }
 
+// Define a function named unique that takes in one argument.
+//    arr (array of strings)
+//
+// Return a new array that contains all the elements of arr minus any
+// duplicates. For example, given ['a', 'b', 'a', 'c'], then return
+// ['a', 'b', 'c'].
+function unique(arr) {
+  var map = {};
+
+  for (var i = 0; i < arr.length; i++) {
+    map[arr[i]] = true;
+  }
+
+  return Object.keys(map);
+}
+
 // In the early days of Roman numerals, the Romans didn't bother with any of
 // this new-fangled subtraction 'IX' nonsense. No sir, it was straight addition,
 // biggest to littlest. So 9 was written 'VIIII' and so on.

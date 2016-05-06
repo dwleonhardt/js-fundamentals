@@ -351,26 +351,12 @@ function pluck(arr, key) {
 // { name: 'moe', age: 50 }.
 function pick(obj, keys) {
   var result = {};
+  var pick;
 
   for (var i = 0; i < keys.length; i++) {
-    result[keys[i]] = obj[keys[i]];
+    key = keys[i];
+    result[key] = obj[key];
   }
 
   return result;
-}
-
-// Define a function named unique that takes in one argument.
-//    arr (array of strings)
-//
-// Return a new array that contains all the elements of arr minus any
-// duplicates. For example, given ['a', 'b', 'a', 'c'], then return
-// ['a', 'b', 'c'].
-function unique(arr) {
-  var map = {};
-
-  for (var i = 0; i < arr.length; i++) {
-    map[arr[i]] = true;
-  }
-
-  return Object.keys(map);
 }
