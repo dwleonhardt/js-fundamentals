@@ -174,7 +174,7 @@ function mean(arr) {
 //    arr (array of numbers)
 //
 // Return the median of all of the numbers. For example, given [1, 2, 6], then
-// return 2. Also, if given [1, 2, 6, 8], return 5. If the array is empty,
+// return 2. Also, if given [1, 2, 6, 8], return 4. If the array is empty,
 // return null.
 //
 // Tip: Use Google to learn more about calculating the median.
