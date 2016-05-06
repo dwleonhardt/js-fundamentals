@@ -40,8 +40,30 @@ It'll take a few steps to solve this cipher. Have fun!
 //
 // Example: caesarAdd13(97) => 110
 // Example: caesarAdd13(110) => 97
+<<<<<<< HEAD:part1/bonus.js
 
 
+=======
+function caesarAdd13(number){
+  var lowestCharCode = 97;
+  var highestCharCode = 122;
+  var offset = 13;
+
+  if (number < lowestCharCode) {
+    throw "Doh!  Too low."
+  }
+
+  if (number > highestCharCode) {
+    throw "Doh!  Too high."
+  }
+
+  var result = number + offset;
+  if (result > highestCharCode) {
+    result = lowestCharCode + (result - highestCharCode - 1);
+  }
+  return result;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715:part1/bonus.js
 
 // Define a function named caesarSubtract13 that takes one argument, a number
 // If the number is less than 97
@@ -55,8 +77,30 @@ It'll take a few steps to solve this cipher. Have fun!
 //
 // Example: caesarSubtract13(97) => 110
 // Example: caesarSubtract13(110) => 97
+<<<<<<< HEAD:part1/bonus.js
 
 
+=======
+function caesarSubtract13(number){
+  var lowestCharCode = 97;
+  var highestCharCode = 122;
+  var offset = 13;
+
+  if (number < lowestCharCode) {
+    throw "Doh!  Too low."
+  }
+
+  if (number > highestCharCode) {
+    throw "Doh!  Too high."
+  }
+
+  var result = number - offset;
+  if (result < lowestCharCode) {
+    result = highestCharCode - (lowestCharCode - result - 1);
+  }
+  return result;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715:part1/bonus.js
 
 // Define a function named encodeChar that takes a single argument: a 1-character string
 // Return the encoded version of that string
@@ -64,8 +108,9 @@ It'll take a few steps to solve this cipher. Have fun!
 // HINT: which of your functions would you use to encode the character?
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
-
-
+function encodeChar(string) {
+  return String.fromCharCode(caesarSubtract13(string.toLowerCase().charCodeAt(0)));
+}
 
 // Define a function named encodeMessage that takes a single argument: a string
 // Return the encoded version of that entire string, according to these rules:
@@ -75,16 +120,27 @@ It'll take a few steps to solve this cipher. Have fun!
 //
 // HINT: you'll need a loop for this
 //
-
-
+function encodeMessage(string) {
+  var result = "";
+  for (var i = 0; i < string.length; i++) {
+    var charCode = string.toLowerCase().charCodeAt(i);
+    if (charCode >= 97 && charCode <= 122) {
+      result += encodeChar(string[i]);
+    } else {
+      result += string[i]
+    }
+  }
+  return result;
+}
 
 // Define a function named decodeMessage that takes a single argument: a string
 // Return the decoded version of that entire string, according to these rules:
 //   - if the character is not a letter, just keep it as is.
 //
 // Example: "uryyb, gurer!" => "Hello, there!"
-
-
+function decodeMessage(string) {
+  return encodeMessage(string);
+}
 
 // SUPER BONUS
 // Figure out how to maintain the case of the letters, so that "Hello, there!" becomes "Uryyb, gurer!" and vice-versa

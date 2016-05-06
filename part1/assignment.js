@@ -4,7 +4,11 @@
 //
 // Return the sum of these two arguments
 function sum(a, b) {
+<<<<<<< HEAD
   // return a + b;
+=======
+  return a + b;
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 }
 
 // Define a function named product that takes two arguments
@@ -13,7 +17,11 @@ function sum(a, b) {
 //
 // Return the product of these two arguments
 function product(a, b) {
+<<<<<<< HEAD
   // YOUR CODE HERE
+=======
+  return a * b;
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 }
 
 // Define a function named sumAndProduct that takes three arguments
@@ -26,7 +34,11 @@ function product(a, b) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x, y, z) {
+<<<<<<< HEAD
 
+=======
+  return (x + y) * z;
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 }
 
 // Define a function named roundUp that takes one argument
@@ -36,7 +48,11 @@ function sumAndProduct(x, y, z) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
 function roundUp(decimal) {
+<<<<<<< HEAD
 
+=======
+  return Math.ceil(decimal);
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 }
 
 // Define a function named toFahrenheit that takes one argument
@@ -44,8 +60,14 @@ function roundUp(decimal) {
 //
 // Return the argument converted to Fahrenheit rounded to the nearest integer.
 // Use Google to find the formula.
+<<<<<<< HEAD
 
 
+=======
+function toFahrenheit(celsius) {
+  return celsius * (9/5) + 32;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named areaOfCircle that takes one argument
 //    radius (number)
@@ -54,8 +76,14 @@ function roundUp(decimal) {
 // formula.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
+<<<<<<< HEAD
 
 
+=======
+function areaOfCircle(radius) {
+  return Math.PI * radius * radius;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named areaOfRing that takes two arguments
 //    outerRadius (number)
@@ -63,8 +91,14 @@ function roundUp(decimal) {
 //
 // Return the area of a circular ring using these arguments. Use Google to find
 // the formula.
+<<<<<<< HEAD
 
 
+=======
+function areaOfRing(outerRadius, innerRadius) {
+  return areaOfCircle(outerRadius) - areaOfCircle(innerRadius);
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named greet that takes 2 arguments
 //    firstName (string)
@@ -73,8 +107,14 @@ function roundUp(decimal) {
 // Return a string in the format 'Hello, Kelly Rippa!' using these arguments
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Template_strings
+<<<<<<< HEAD
 
 
+=======
+function greet(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named toSentence that takes four arguments
 //    word1 (string)
@@ -90,8 +130,18 @@ function roundUp(decimal) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
+<<<<<<< HEAD
 
 
+=======
+function toSentence(word1, word2, word3, oxfordComma) {
+  if (oxfordComma) {
+    return word1 + ', ' + word2 + ', and ' + word3 + '.';
+  } else {
+    return word1 + ', ' + word2 + ' and ' + word3 + '.';
+  }
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named toRoman that takes one argument
 //    arabic (number)
@@ -104,8 +154,47 @@ function roundUp(decimal) {
 //    Return the argument converted to a roman numeral string
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
+<<<<<<< HEAD
 
 
+=======
+function toRoman(arabic) {
+  switch (arabic) {
+    case 1:
+      return "I";
+      break;
+    case 2:
+      return "II";
+      break;
+    case 3:
+      return "III";
+      break;
+    case 4:
+      return "IV";
+      break;
+    case 5:
+      return "V";
+      break;
+    case 6:
+      return "VI";
+      break;
+    case 7:
+      return "VII";
+      break;
+    case 8:
+      return "VIII";
+      break;
+    case 9:
+      return "IX";
+      break;
+    case 10:
+      return "X";
+      break;
+    default:
+      return null;
+  }
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function toDolla that takes one number argument
 //    amount (number)
@@ -114,8 +203,14 @@ function roundUp(decimal) {
 // 10, then return '$10.00'.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+<<<<<<< HEAD
 
 
+=======
+function toDolla(amount) {
+  return `$${amount.toFixed(2)}`;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named percentage that takes two arguments
 //    numerator (number)
@@ -123,8 +218,14 @@ function roundUp(decimal) {
 //
 // Return the percentage of the first argument divided by the second. For
 // example, given 1 and 4, then return '25.0%'.
+<<<<<<< HEAD
 
 
+=======
+function percentage(numerator, denominator) {
+  return (numerator / denominator * 100).toFixed(1) + '%'
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named isStrictlyEqual that takes two arguments
 //    value1 (anything)
@@ -138,8 +239,14 @@ function roundUp(decimal) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Strict_equality_using
 //
 // See https://dorey.github.io/JavaScript-Equality-Table/
+<<<<<<< HEAD
 
 
+=======
+function isStrictlyEqual(value1, value2) {
+  return value1 === value2;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named isLooselyEqual that takes two arguments
 //    value1 (anything)
@@ -151,8 +258,14 @@ function roundUp(decimal) {
 //    Return false
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using
+<<<<<<< HEAD
 
 
+=======
+function isLooselyEqual(value1, value2) {
+  return value1 == value2;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named remainder that takes two arguments
 //    numerator (number)
@@ -162,8 +275,14 @@ function roundUp(decimal) {
 // example, given 4 and 3, then return 1.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
+<<<<<<< HEAD
 
 
+=======
+function remainder(numerator, denominator) {
+  return numerator % denominator;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named isEven that takes one argument
 //    integer (number)
@@ -174,8 +293,14 @@ function roundUp(decimal) {
 //    Return false
 //
 // Hint: What number will give you a remainder of 0 if the argument is even?
+<<<<<<< HEAD
 
 
+=======
+function isEven(integer) {
+  return integer % 2 === 0;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named isOdd that takes one argument
 //    integer (number)
@@ -184,8 +309,14 @@ function roundUp(decimal) {
 //    Return true
 // Otherwise
 //    Return false
+<<<<<<< HEAD
 
 
+=======
+function isOdd(integer) {
+  return integer % 2 !== 0;
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named isVowel that takes one argument
 //    letter (string)
@@ -196,8 +327,14 @@ function roundUp(decimal) {
 //    Return false
 //
 // Treat 'y' as a consonant.
+<<<<<<< HEAD
 
 
+=======
+function isVowel(letter) {
+  return letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u';
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named largestOfThree which takes three arguments
 //    value1 (number)
@@ -207,8 +344,22 @@ function roundUp(decimal) {
 // Return the largest argument by value
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+<<<<<<< HEAD
 
 
+=======
+function largestOfThree(value1, value2, value3) {
+  if (value1 > value2 && value1 > value3) {
+    return value1;
+  } else if (value2 > value1 && value2 > value3){
+    return value2;
+  } else {
+    return value3;
+  }
+  // OR....
+  // return Math.max(value1, value2, value3);
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named longestOfThree which takes three arguments
 //    value1 (string)
@@ -220,8 +371,24 @@ function roundUp(decimal) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+<<<<<<< HEAD
 
 
+=======
+function longestOfThree(value1, value2, value3) {
+  var max = Math.max(value1.length, value2.length, value3.length);
+
+  if (value1.length === max) {
+    return value1;
+  }
+  else if (value2.length === max) {
+    return value2;
+  }
+  else {
+    return value3;
+  }
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named iceCreamPosition that takes two arguments
 //    pieTemperature (string)
@@ -234,8 +401,20 @@ function roundUp(decimal) {
 //      Return 'on top'
 //    If pieTemperature is 'warm'
 //      Return 'on the side'
+<<<<<<< HEAD
 
 
+=======
+function iceCreamPosition(pieTemperature, iceCreamFlavor) {
+  if (iceCreamFlavor === 'cardamom') {
+    return 'not at all';
+  } else if (pieTemperature === 'warm') {
+    return 'on the side';
+  }
+
+  return 'on top';
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named isLeapYear that takes one argument
 //    year (number)
@@ -246,8 +425,22 @@ function roundUp(decimal) {
 //    Return false
 //
 // See: https://en.wikipedia.org/wiki/Leap_year#Algorithm
+<<<<<<< HEAD
 
 
+=======
+function isLeapYear(year) {
+  if (year % 4 !== 0) {
+    return false;
+  } else if (year % 100 !== 0) {
+    return true;
+  } else if (year % 400 !== 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named shout that takes one argument
 //    message (string)
@@ -256,8 +449,14 @@ function roundUp(decimal) {
 // 'Shut the front door', then return 'SHUT THE FRONT DOOR'
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+<<<<<<< HEAD
 
 
+=======
+function shout(message) {
+  return message.toUpperCase();
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named whisper that takes one argument
 //    message (string)
@@ -266,8 +465,14 @@ function roundUp(decimal) {
 // 'shhh... '. For exaple, given 'GOLF TIME', then return "shhh... golf time"
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+<<<<<<< HEAD
 
 
+=======
+function whisper(message) {
+  return 'shhh... ' + message.toLowerCase();
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named stopAt that takes two arguments
 //   source (string)
@@ -283,8 +488,14 @@ function roundUp(decimal) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+<<<<<<< HEAD
 
 
+=======
+function stopAt(source, stop) {
+  return source.substring(0, source.indexOf(stop)).trim();
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named capitalize that takes one argument
 //    message (string)
@@ -293,8 +504,14 @@ function roundUp(decimal) {
 // 'oh, you', then return 'Oh, you'.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+<<<<<<< HEAD
 
 
+=======
+function capitalize(message) {
+  return message.substring(0, 1).toUpperCase() + message.substring(1);
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named leftPad5 that takes one argument
 //    word (string)
@@ -307,8 +524,29 @@ function roundUp(decimal) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
+<<<<<<< HEAD
 
 
+=======
+function leftPad5(word) {
+  switch (word.length) {
+    case 1:
+      return '    ' + word;
+      break;
+    case 2:
+      return '   ' + word;
+      break;
+    case 3:
+      return '  ' + word;
+      break;
+    case 4:
+      return ' ' + word;
+      break;
+    default:
+      return word;
+  }
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named superPicky that takes one argument
 //    value (anything)
@@ -319,8 +557,18 @@ function roundUp(decimal) {
 //    Return 'I wanted a string, but all I got was a stinking [type]'
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+<<<<<<< HEAD
 
 
+=======
+function superPicky(value) {
+  if (typeof value === 'string') {
+    return 'Thanks! Got it.';
+  } else {
+    return `I wanted a string, but all I got was a stinking ${typeof value}`;
+  }
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
 
 // Define a function named calculateTaxRate that takes two arguments
 //    salary (number from 1 to 74,900)
@@ -332,3 +580,22 @@ function roundUp(decimal) {
 //    Return a string that says 'Better call an accountant'
 // Otherwise
 //    Return the correct tax rate as a string using the table from http://www.efile.com/tax-service/tax-calculator/tax-brackets/
+<<<<<<< HEAD
+=======
+function calculateTaxRate(salary, status) {
+  if (salary > 74900 || (status !== 'single' && status !== 'joint')) {
+    return 'Better call an accountant';
+  }
+
+  switch (status) {
+    case 'single':
+      if (salary >= 1 && salary <= 9225) {
+        return '10%';
+      } else {
+        return '15%';
+      }
+    case 'joint':
+      return salary >= 1 && salary <= 18450 ? '10%' : '15%';
+  }
+}
+>>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715
