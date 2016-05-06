@@ -4,63 +4,63 @@ window.onload = function() {
 
   suite('#sum', function() {
     test('adds a bunch of numbers', function() {
-      assert.equal(sum([]), 0);
-      assert.equal(sum([1, 2, 3, 4]), 10);
-      assert.equal(sum([1, -1, 2, -3]), -1);
+      assert.strictEqual(sum([]), 0);
+      assert.strictEqual(sum([1, 2, 3, 4]), 10);
+      assert.strictEqual(sum([1, -1, 2, -3]), -1);
     });
   });
 
   suite('#product', function() {
     test('multiplies bunch of numbers', function() {
-      assert.equal(product([]), 1);
-      assert.equal(product([1, 2, 3, 4]), 24);
-      assert.equal(product([1, 2, 3, 4, 0]), 0);
+      assert.strictEqual(product([]), 1);
+      assert.strictEqual(product([1, 2, 3, 4]), 24);
+      assert.strictEqual(product([1, 2, 3, 4, 0]), 0);
     });
   });
 
   suite('concatenate', function() {
     test('concatenates an array of strings', function() {
-      assert.equal(concatenate([]), '');
-      assert.equal(concatenate(['Hello', 'world', 'Seattle']), 'HelloworldSeattle');
+      assert.strictEqual(concatenate([]), '');
+      assert.strictEqual(concatenate(['Hello', 'world', 'Seattle']), 'HelloworldSeattle');
     });
   });
 
   suite('#max', function() {
     test('calculates the max number in an array', function() {
-      assert.equal(max([1, 2, 3, 4, 3]), 4);
-      assert.equal(max([1, 2, 3, -4, 3]), 3);
+      assert.strictEqual(max([1, 2, 3, 4, 3]), 4);
+      assert.strictEqual(max([1, 2, 3, -4, 3]), 3);
     });
 
     test('calculates the max number in an empty array', function() {
-      assert.equal(max([]), -Infinity);
+      assert.strictEqual(max([]), -Infinity);
     });
   });
 
   suite('#min', function() {
     test('calculates the min number in an array', function() {
-      assert.equal(min([1, 2, 3, 4, 3]), 1);
-      assert.equal(min([1, 2, 3, -4, 3]), -4);
+      assert.strictEqual(min([1, 2, 3, 4, 3]), 1);
+      assert.strictEqual(min([1, 2, 3, -4, 3]), -4);
     });
 
     test('calculates the min number in an empty array', function() {
-      assert.equal(min([]), Infinity);
+      assert.strictEqual(min([]), Infinity);
     });
   });
 
   suite('#mean', function() {
     test('calculates the mean of an array', function() {
-      assert.equal(mean([1, 2, 3, 4, 5]), 3);
-      assert.equal(mean([1, 2, 3, -4, 3]), 1);
-      assert.equal(mean([]), null);
+      assert.strictEqual(mean([1, 2, 3, 4, 5]), 3);
+      assert.strictEqual(mean([1, 2, 3, -4, 3]), 1);
+      assert.strictEqual(mean([]), null);
     });
   });
 
   suite('#median', function() {
     test('calculates the median of an array', function() {
-      assert.equal(median([1, 1, 2, 3, 4, 5, 6]), 3);
-      assert.equal(median([1, 1, 2, 3, 4, 5]), 2.5);
-      assert.equal(median([1, 6, 5, 3, 4, 2, 1]), 3);
-      assert.equal(median([]), null);
+      assert.strictEqual(median([1, 1, 2, 3, 4, 5, 6]), 3);
+      assert.strictEqual(median([1, 1, 2, 3, 4, 5]), 2.5);
+      assert.strictEqual(median([1, 6, 5, 3, 4, 2, 1]), 3);
+      assert.strictEqual(median([]), null);
     });
   });
 
@@ -73,17 +73,17 @@ window.onload = function() {
 
   suite('#repeat', function() {
     test('repeats a string multiple times', function() {
-      assert.equal(repeat('hi', 4), 'hihihihi');
-      assert.equal(repeat('ken', 3), 'kenkenken');
-      assert.equal(repeat('hello', 1), 'hello');
+      assert.strictEqual(repeat('hi', 4), 'hihihihi');
+      assert.strictEqual(repeat('ken', 3), 'kenkenken');
+      assert.strictEqual(repeat('hello', 1), 'hello');
     });
   });
 
   suite('#contains', function() {
     test('checks if a string is in the array', function() {
-      assert.equal(contains(['Ryan', 'Ken', 'Ian'], 'Ken'), true);
-      assert.equal(contains([], 'Ken'), false);
-      assert.equal(contains(['Ryan', 'Ken', 'Ian', 'Lionel'], 'Adam'), false);
+      assert.strictEqual(contains(['Ryan', 'Ken', 'Ian'], 'Ken'), true);
+      assert.strictEqual(contains([], 'Ken'), false);
+      assert.strictEqual(contains(['Ryan', 'Ken', 'Ian', 'Lionel'], 'Adam'), false);
     });
   });
 
@@ -151,45 +151,45 @@ window.onload = function() {
 
   suite('#oldSchoolRomanNumeral', function() {
     test('converts a number to a roman numeral in the old school format', function() {
-      assert.equal(oldSchoolRomanNumeral(1), 'I');
-      assert.equal(oldSchoolRomanNumeral(2), 'II');
-      assert.equal(oldSchoolRomanNumeral(4), 'IIII');
-      assert.equal(oldSchoolRomanNumeral(5), 'V');
-      assert.equal(oldSchoolRomanNumeral(6), 'VI');
-      assert.equal(oldSchoolRomanNumeral(9), 'VIIII');
-      assert.equal(oldSchoolRomanNumeral(10), 'X');
-      assert.equal(oldSchoolRomanNumeral(11), 'XI');
-      assert.equal(oldSchoolRomanNumeral(15), 'XV');
-      assert.equal(oldSchoolRomanNumeral(16), 'XVI');
-      assert.equal(oldSchoolRomanNumeral(52), 'LII');
-      assert.equal(oldSchoolRomanNumeral(72), 'LXXII');
-      assert.equal(oldSchoolRomanNumeral(72), 'LXXII');
-      assert.equal(oldSchoolRomanNumeral(134), 'CXXXIIII');
-      assert.equal(oldSchoolRomanNumeral(273), 'CCLXXIII');
-      assert.equal(oldSchoolRomanNumeral(749), 'DCCXXXXVIIII');
-      assert.equal(oldSchoolRomanNumeral(1000), 'M');
+      assert.strictEqual(oldSchoolRomanNumeral(1), 'I');
+      assert.strictEqual(oldSchoolRomanNumeral(2), 'II');
+      assert.strictEqual(oldSchoolRomanNumeral(4), 'IIII');
+      assert.strictEqual(oldSchoolRomanNumeral(5), 'V');
+      assert.strictEqual(oldSchoolRomanNumeral(6), 'VI');
+      assert.strictEqual(oldSchoolRomanNumeral(9), 'VIIII');
+      assert.strictEqual(oldSchoolRomanNumeral(10), 'X');
+      assert.strictEqual(oldSchoolRomanNumeral(11), 'XI');
+      assert.strictEqual(oldSchoolRomanNumeral(15), 'XV');
+      assert.strictEqual(oldSchoolRomanNumeral(16), 'XVI');
+      assert.strictEqual(oldSchoolRomanNumeral(52), 'LII');
+      assert.strictEqual(oldSchoolRomanNumeral(72), 'LXXII');
+      assert.strictEqual(oldSchoolRomanNumeral(72), 'LXXII');
+      assert.strictEqual(oldSchoolRomanNumeral(134), 'CXXXIIII');
+      assert.strictEqual(oldSchoolRomanNumeral(273), 'CCLXXIII');
+      assert.strictEqual(oldSchoolRomanNumeral(749), 'DCCXXXXVIIII');
+      assert.strictEqual(oldSchoolRomanNumeral(1000), 'M');
     });
   });
 
   suite('#newSchoolRomanNumeral', function() {
     test('converts a number to a roman numeral in the new school format', function() {
-      assert.equal(newSchoolRomanNumeral(1), 'I');
-      assert.equal(newSchoolRomanNumeral(2), 'II');
-      assert.equal(newSchoolRomanNumeral(4), 'IV');
-      assert.equal(newSchoolRomanNumeral(5), 'V');
-      assert.equal(newSchoolRomanNumeral(6), 'VI');
-      assert.equal(newSchoolRomanNumeral(9), 'IX');
-      assert.equal(newSchoolRomanNumeral(10), 'X');
-      assert.equal(newSchoolRomanNumeral(11), 'XI');
-      assert.equal(newSchoolRomanNumeral(15), 'XV');
-      assert.equal(newSchoolRomanNumeral(16), 'XVI');
-      assert.equal(newSchoolRomanNumeral(52), 'LII');
-      assert.equal(newSchoolRomanNumeral(72), 'LXXII');
-      assert.equal(newSchoolRomanNumeral(72), 'LXXII');
-      assert.equal(newSchoolRomanNumeral(134), 'CXXXIV');
-      assert.equal(newSchoolRomanNumeral(273), 'CCLXXIII');
-      assert.equal(newSchoolRomanNumeral(749), 'DCCXLIX');
-      assert.equal(newSchoolRomanNumeral(1000), 'M');
+      assert.strictEqual(newSchoolRomanNumeral(1), 'I');
+      assert.strictEqual(newSchoolRomanNumeral(2), 'II');
+      assert.strictEqual(newSchoolRomanNumeral(4), 'IV');
+      assert.strictEqual(newSchoolRomanNumeral(5), 'V');
+      assert.strictEqual(newSchoolRomanNumeral(6), 'VI');
+      assert.strictEqual(newSchoolRomanNumeral(9), 'IX');
+      assert.strictEqual(newSchoolRomanNumeral(10), 'X');
+      assert.strictEqual(newSchoolRomanNumeral(11), 'XI');
+      assert.strictEqual(newSchoolRomanNumeral(15), 'XV');
+      assert.strictEqual(newSchoolRomanNumeral(16), 'XVI');
+      assert.strictEqual(newSchoolRomanNumeral(52), 'LII');
+      assert.strictEqual(newSchoolRomanNumeral(72), 'LXXII');
+      assert.strictEqual(newSchoolRomanNumeral(72), 'LXXII');
+      assert.strictEqual(newSchoolRomanNumeral(134), 'CXXXIV');
+      assert.strictEqual(newSchoolRomanNumeral(273), 'CCLXXIII');
+      assert.strictEqual(newSchoolRomanNumeral(749), 'DCCXLIX');
+      assert.strictEqual(newSchoolRomanNumeral(1000), 'M');
     });
   });
 
