@@ -237,7 +237,7 @@ function isOdd(integer) {
 //
 // Treat 'y' as a consonant.
 function isVowel(letter) {
-  return letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u';
+  return 'aeiou'.indexOf(letter) !== -1;
 }
 
 // Define a function named largestOfThree which takes three arguments
