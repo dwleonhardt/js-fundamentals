@@ -415,7 +415,7 @@ function leftPad5(word) {
 // If the argument is a string,
 //    Return 'Thanks! Got it.'
 // Otherwise
-//    Return 'I wanted a string, but all I got was a stinking [type]'
+//    Return 'I wanted a string, but all I got was a stinking TYPE'
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 function superPicky(value) {
