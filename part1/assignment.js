@@ -324,6 +324,9 @@ function isLeapYear(year) {
   } else {
     return true;
   }
+
+  // OR...
+  // return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
 }
 
 // Define a function named shout that takes one argument
@@ -346,6 +349,9 @@ function shout(message) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 function whisper(message) {
   return 'shhh... ' + message.toLowerCase();
+
+  // OR...
+  // return `shhh... ${message.toLowerCase()}`;
 }
 
 // Define a function named stopAt that takes two arguments
