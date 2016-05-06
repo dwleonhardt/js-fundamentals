@@ -40,10 +40,6 @@ It'll take a few steps to solve this cipher. Have fun!
 //
 // Example: caesarAdd13(97) => 110
 // Example: caesarAdd13(110) => 97
-<<<<<<< HEAD:part1/bonus.js
-
-
-=======
 function caesarAdd13(number){
   var lowestCharCode = 97;
   var highestCharCode = 122;
@@ -63,7 +59,6 @@ function caesarAdd13(number){
   }
   return result;
 }
->>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715:part1/bonus.js
 
 // Define a function named caesarSubtract13 that takes one argument, a number
 // If the number is less than 97
@@ -77,10 +72,6 @@ function caesarAdd13(number){
 //
 // Example: caesarSubtract13(97) => 110
 // Example: caesarSubtract13(110) => 97
-<<<<<<< HEAD:part1/bonus.js
-
-
-=======
 function caesarSubtract13(number){
   var lowestCharCode = 97;
   var highestCharCode = 122;
@@ -100,7 +91,6 @@ function caesarSubtract13(number){
   }
   return result;
 }
->>>>>>> c4e42e50306b858afd40597ae66c1d6456d21715:part1/bonus.js
 
 // Define a function named encodeChar that takes a single argument: a 1-character string
 // Return the encoded version of that string
