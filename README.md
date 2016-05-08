@@ -1,13 +1,28 @@
 # JavaScript Fundamentals
 
-Welcome to JavaScript. There's so much to do so let's jump right in.
+This exercise reinforces the fundamentals of JavaScript and is split into two parts. Part 1 has you wrestling with core JavaScript concepts.
+
+- Primitives
+- Declarations
+- Functions
+- Globals
+- Operators
+- Control flow
+
+While part 2 builds on the above and has you wrestling with more essential concepts.
+
+- Arrays
+- Objects
+- Iterations
+
+Furthermore, each part has two components—an **assignment** and a **bonus**. Complete the each part's assignment before moving on to its respective bonus or the next part's assignment.
 
 ### Objectives
 
-To complete these challenges, you must be able to:
+To complete this exercise, you must do the following.
 
-- Write basic JavaScript statements and expressions
-- Use online documentation to help solve JavaScript problems
+- Solve puzzles using fundamental JavaScript concepts
+- Use online documentation to lookup how to use unfamiliar concepts
 
 ### Setup
 
