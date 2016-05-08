@@ -20,12 +20,7 @@ Part 2 builds on the above and has you wrestling with more essential concepts.
 
 Furthermore, each part has two components—an **assignment** and a **bonus**. Complete the each part's assignment before moving on to its respective bonus or the next part's assignment.
 
-### Objectives
-
-To complete this exercise, you must do the following.
-
-- Solve puzzles using fundamental JavaScript concepts
-- Use online documentation to lookup how to use unfamiliar concepts
+**TIP:** You're encouraged to use online documentation to lookup how to use unfamiliar concepts.
 
 ### Setup
 
