@@ -39,20 +39,22 @@ In your web browser, you'll see a page that shows a bunch of failing JavaScript 
 
 ### How to proceed
 
-Your job is to make all these JavaScript tests pass.
+Your job is to make all these JavaScript tests pass by completing their respective puzzle.
 
 1. Open the `part1/assignment.js` file in your text editor.
-1. Read the instructions on for each incorrect function.
-1. Write code to make each function pass the test.
+1. Read the instructions for each puzzle.
+1. Solve the puzzle by writing JavaScript.
 
-After making a change:
+To test your puzzle's solution:
 
-1. Tab over to the browser with `Command` + `Tab`.
-1. Refresh the browser with `Command` + `R`.
-1. Scroll to the first failing test in red.
-1. Use the information provided to help you figure out what's next.
+1. Tab over to the browser with `Command + Tab`.
+1. Refresh the browser with `Command + R`.
+1. Scroll to the puzzle's test and see if it's still red.
+1. Once the test is green, you've solved the puzzle.
 
-You'll tab-refreshing hundreds of times during this challenge. Check your work after every small change :)
+You can see how each test invokes the puzzle's function by clicking on the test description.
+
+**TIP:** Check your work after every small change.
 
 ### Wrestle with it
 
