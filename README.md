@@ -52,9 +52,9 @@ To test your puzzle's solution:
 1. Scroll to the puzzle's test and see if it's still red.
 1. Once the test is green, you've solved the puzzle.
 
-You can see how each test invokes the puzzle's function by clicking on the test description.
+Check your work after every small change. You can see how each test invokes the puzzle's function by clicking on the test description.
 
-**TIP:** Check your work after every small change.
+![](images/invoked.png)
 
 ### Wrestle with it
 
