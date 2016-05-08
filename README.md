@@ -1,6 +1,8 @@
 # JavaScript Fundamentals
 
-This exercise reinforces the fundamentals of JavaScript and is split into two parts. Part 1 has you wrestling with core JavaScript concepts.
+In this exercise, you'll need to solve a set of increasingly difficult puzzles aimed at helping you master the fundamentals of JavaScript. The exercise is split into two parts.
+
+Part 1 has you wrestling with core JavaScript concepts.
 
 - Primitives
 - Functions
@@ -9,7 +11,7 @@ This exercise reinforces the fundamentals of JavaScript and is split into two pa
 - Operators
 - Control flow
 
-While part 2 builds on the above and has you wrestling with more essential concepts.
+Part 2 builds on the above and has you wrestling with more essential concepts.
 
 - Functions (again)
 - Arrays
