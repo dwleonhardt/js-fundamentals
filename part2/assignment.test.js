@@ -2,7 +2,7 @@ window.onload = function() {
   var assert = chai.assert;
   mocha.setup('tdd');
 
-  suite('#sum', function() {
+  suite('sum', function() {
     test('adds a bunch of numbers', function() {
       assert.strictEqual(sum([]), 0);
       assert.strictEqual(sum([1, 2, 3, 4]), 10);
@@ -10,7 +10,7 @@ window.onload = function() {
     });
   });
 
-  suite('#product', function() {
+  suite('product', function() {
     test('multiplies bunch of numbers', function() {
       assert.strictEqual(product([]), 1);
       assert.strictEqual(product([1, 2, 3, 4]), 24);
@@ -25,7 +25,7 @@ window.onload = function() {
     });
   });
 
-  suite('#repeat', function() {
+  suite('repeat', function() {
     test('repeats a string multiple times', function() {
       assert.strictEqual(repeat('hi', 4), 'hihihihi');
       assert.strictEqual(repeat('ken', 3), 'kenkenken');
@@ -33,7 +33,7 @@ window.onload = function() {
     });
   });
 
-  suite('#filterPassingGrades', function() {
+  suite('filterPassingGrades', function() {
     test('filters all passing grades', function() {
       assert.deepEqual(filterPassingGrades([]), []);
       assert.deepEqual(filterPassingGrades([100, 45, 90, 60]), [100, 90]);
@@ -42,7 +42,7 @@ window.onload = function() {
     });
   });
 
-  suite('#replace', function() {
+  suite('replace', function() {
     test('replaces values in an array with another', function() {
       assert.deepEqual(replace([1, 3, 2, 1, 3], 1, 4), [4, 3, 2, 4, 3]);
       assert.deepEqual(replace([], 1, 4), []);
@@ -50,7 +50,7 @@ window.onload = function() {
     });
   });
 
-  suite('#flatten', function() {
+  suite('flatten', function() {
     test('flattens an array of arrays', function() {
       assert.deepEqual(flatten([]), []);
       assert.deepEqual(flatten([[1], [2], [3], [4]]), [1, 2, 3, 4]);
@@ -59,7 +59,7 @@ window.onload = function() {
     });
   });
 
-  suite('#max', function() {
+  suite('max', function() {
     test('calculates the max number in an array', function() {
       assert.strictEqual(max([1, 2, 3, 4, 3]), 4);
       assert.strictEqual(max([1, 2, 3, -4, 3]), 3);
@@ -67,7 +67,7 @@ window.onload = function() {
     });
   });
 
-  suite('#min', function() {
+  suite('min', function() {
     test('calculates the min number in an array', function() {
       assert.strictEqual(min([1, 2, 3, 4, 3]), 1);
       assert.strictEqual(min([1, 2, 3, -4, 3]), -4);
@@ -75,7 +75,7 @@ window.onload = function() {
     });
   });
 
-  suite('#mean', function() {
+  suite('mean', function() {
     test('calculates the mean of an array', function() {
       assert.strictEqual(mean([1, 2, 3, 4, 5]), 3);
       assert.strictEqual(mean([1, 2, 3, -4, 3]), 1);
@@ -83,7 +83,7 @@ window.onload = function() {
     });
   });
 
-  suite('#median', function() {
+  suite('median', function() {
     test('calculates the median of an array', function() {
       assert.strictEqual(median([1, 1, 2, 3, 4, 5, 6]), 3);
       assert.strictEqual(median([1, 1, 2, 3, 4, 5]), 2.5);
@@ -92,7 +92,7 @@ window.onload = function() {
     });
   });
 
-  suite('#contains', function() {
+  suite('contains', function() {
     test('checks if a string is in the array', function() {
       assert.strictEqual(contains(['Ryan', 'Ken', 'Ian'], 'Ken'), true);
       assert.strictEqual(contains([], 'Ken'), false);
@@ -100,14 +100,14 @@ window.onload = function() {
     });
   });
 
-  suite('#distance', function() {
+  suite('distance', function() {
     test('returns the distance between two points', function() {
       assert.approximately(distance({x: 0, y: 3}, {x: 0, y: 0}), 3, 0.01);
       assert.approximately(distance({x: -1, y: 1}, {x: 0, y: 0}), Math.sqrt(2), 0.01);
     });
   });
 
-  suite('#combine', function() {
+  suite('combine', function() {
     test('returns the combination of key-value pairs from two objects', function() {
       assert.deepEqual(combine({a: 1}, {}), {a: 1});
       assert.deepEqual(combine({}, {b: 2}), {b: 2});
@@ -117,7 +117,7 @@ window.onload = function() {
     })
   });
 
-  suite('#invert', function() {
+  suite('invert', function() {
     test('returns a new object where the keys and values are inverted', function() {
       assert.deepEqual(invert({a: 1}), {'1': 'a'});
       assert.deepEqual(invert({a: 1, b: 2}), {'1': 'a', '2': 'b'});
@@ -125,7 +125,7 @@ window.onload = function() {
     });
   });
 
-  suite('#toPairs', function() {
+  suite('toPairs', function() {
     test('returns a new array where each element is a key-value pair array', function() {
       assert.deepEqual(toPairs({a: 1}), [['a', 1]]);
       assert.deepEqual(toPairs({a: 1, b: 2}), [['a', 1], ['b', 2]]);
@@ -133,7 +133,7 @@ window.onload = function() {
     });
   });
 
-  suite('#fromPairs', function() {
+  suite('fromPairs', function() {
     test('returns a new object where each key-value pair is an element in an array', function() {
       assert.deepEqual(fromPairs([['a', 1]]), {a: 1});
       assert.deepEqual(fromPairs([['a', 1], ['b', 2]]), {a: 1, b: 2});
@@ -141,7 +141,7 @@ window.onload = function() {
     });
   });
 
-  suite('#values', function() {
+  suite('values', function() {
     test('returns values of an object', function() {
       assert.deepEqual(values({}), []);
       assert.deepEqual(values({a: 1, b: 'foo'}), [1, 'foo']);
@@ -149,7 +149,7 @@ window.onload = function() {
     });
   });
 
-  suite('#pluck', function() {
+  suite('pluck', function() {
     test('grabs the values from an array of object for a specific key', function() {
       assert.deepEqual(pluck([], 'foo'), []);
       var stooges = [
@@ -161,7 +161,7 @@ window.onload = function() {
     });
   });
 
-  suite('#pick', function() {
+  suite('pick', function() {
     test('picks an array of property names from an object', function() {
       assert.deepEqual(pick({name: 'moe', age: 50, userid: 'moe1'}, []), {});
       assert.deepEqual(pick({name: 'moe', age: 50, userid: 'moe1'},

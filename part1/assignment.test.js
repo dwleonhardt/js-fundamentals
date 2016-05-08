@@ -2,7 +2,7 @@ window.onload = function() {
   var assert = chai.assert;
   mocha.setup('tdd');
 
-  suite('#sum', function() {
+  suite('sum', function() {
     test('adds two numbers', function() {
       assert.equal(sum(5, 2), 7);
       assert.equal(sum(-4, 8), 4);
@@ -10,7 +10,7 @@ window.onload = function() {
     });
   });
 
-  suite('#product', function() {
+  suite('product', function() {
     test('multiplies two numbers', function() {
       assert.equal(product(5, 2), 10);
       assert.equal(product(-4, 8), -32);
@@ -18,7 +18,7 @@ window.onload = function() {
     });
   });
 
-  suite('#sumAndProduct', function() {
+  suite('sumAndProduct', function() {
     test('adds the first two numbers and multiplies that sum by the third', function() {
       assert.equal(sumAndProduct(4, 4, 4), 32);
       assert.equal(sumAndProduct(2, -3, 7), -7);
@@ -26,7 +26,7 @@ window.onload = function() {
     });
   });
 
-  suite('#roundUp', function() {
+  suite('roundUp', function() {
     test('rounds the number up to the nearest integer', function() {
       assert.equal(roundUp(2.1), 3);
       assert.equal(roundUp(4.7), 5);
@@ -34,7 +34,7 @@ window.onload = function() {
     });
   });
 
-  suite('#toFahrenheit', function() {
+  suite('toFahrenheit', function() {
     test('converts the Celsius to Fahrenheit rounded to the nearest integer', function() {
       assert.equal(toFahrenheit(30), 86);
       assert.equal(toFahrenheit(31), 88);
@@ -42,28 +42,28 @@ window.onload = function() {
     });
   });
 
-  suite('#areaOfCircle', function() {
+  suite('areaOfCircle', function() {
     test('calculates the area of a ciricle', function() {
       assert.approximately(areaOfCircle(10), 314.1592653589793, 0.01);
       assert.approximately(areaOfCircle(20), 1256.6370614359173, 0.01);
     });
   });
 
-  suite('#areaOfRing', function() {
+  suite('areaOfRing', function() {
     test('calculates the the area of a circulur ring', function() {
       assert.approximately(areaOfRing(10, 5), 235.61944901923448, 0.01);
       assert.approximately(areaOfRing(20, 17), 348.716784548467, 0.01);
     });
   });
 
-  suite('#greet', function() {
+  suite('greet', function() {
     test('greets a person by their full name', function() {
       assert.equal(greet('Bart', 'Simpson'), 'Hello, Bart Simpson!');
       assert.equal(greet('Mona', 'Lisa'), 'Hello, Mona Lisa!');
     });
   });
 
-  suite('#toSentence', function() {
+  suite('toSentence', function() {
     test('converts the words to a sentence with an oxford comma', function() {
       assert.equal(toSentence('Red', 'Green', 'Blue', true), 'Red, Green, and Blue.');
       assert.equal(toSentence('Apples', 'Oranges', 'Bananas', true), 'Apples, Oranges, and Bananas.');
@@ -75,7 +75,7 @@ window.onload = function() {
     });
   });
 
-  suite('#toRoman', function() {
+  suite('toRoman', function() {
     test('returns null if the number is less than 1', function() {
       assert.equal(toRoman(0), null);
       assert.equal(toRoman(-1), null);
@@ -100,21 +100,21 @@ window.onload = function() {
     });
   });
 
-  suite('#toDolla', function() {
+  suite('toDolla', function() {
     test('converts the number to dollar currency string', function() {
       assert.equal(toDolla(10), '$10.00');
       assert.equal(toDolla(45.2), '$45.20');
     });
   });
 
-  suite('#percentage', function() {
+  suite('percentage', function() {
     test('calculates the percentage of the first number divided by the second', function() {
       assert.equal(percentage(1, 5), '20.0%');
       assert.equal(percentage(1, 3), '33.3%');
     });
   });
 
-  suite('#isStrictlyEqual', function() {
+  suite('isStrictlyEqual', function() {
     test('returns true if the values and types are equal', function() {
       assert.equal(isStrictlyEqual(-1, -1), true);
       assert.equal(isStrictlyEqual('foo', 'foo'), true);
@@ -136,7 +136,7 @@ window.onload = function() {
     });
   });
 
-  suite('#isLooselyEqual', function() {
+  suite('isLooselyEqual', function() {
     test('returns true if the values are equal even if the types are not', function() {
       assert.equal(isLooselyEqual(-1, '-1'), true);
       assert.equal(isLooselyEqual(false, 0), true);
@@ -148,14 +148,14 @@ window.onload = function() {
     });
   });
 
-  suite('#remainder', function() {
+  suite('remainder', function() {
     test('calculates the remainder of the first number divided by the second', function() {
       assert.equal(remainder(100, 25), 0);
       assert.equal(remainder(100, 30), 10);
     });
   });
 
-  suite('#isEven', function() {
+  suite('isEven', function() {
     test('returns true if the number is even', function() {
       assert.equal(isEven(10), true);
       assert.equal(isEven(14), true);
@@ -167,7 +167,7 @@ window.onload = function() {
     });
   });
 
-  suite('#isOdd', function() {
+  suite('isOdd', function() {
     test('returns true if the number is odd', function() {
       assert.equal(isOdd(11), true);
       assert.equal(isOdd(15), true);
@@ -179,7 +179,7 @@ window.onload = function() {
     });
   });
 
-  suite('#isVowel', function() {
+  suite('isVowel', function() {
     test('returns true if the letter is a vowel', function() {
       assert.equal(isVowel('a'), true);
       assert.equal(isVowel('e'), true);
@@ -196,7 +196,7 @@ window.onload = function() {
     });
   });
 
-  suite('#largestOfThree', function() {
+  suite('largestOfThree', function() {
     test('returns the largest argument by value', function() {
       assert.equal(largestOfThree(9, 6, 3), 9);
       assert.equal(largestOfThree(0, 7, 4), 7);
@@ -204,7 +204,7 @@ window.onload = function() {
     });
   });
 
-  suite('#longestOfThree', function() {
+  suite('longestOfThree', function() {
     test('returns the longest argument by length', function() {
       assert.equal(longestOfThree('eight', 'two', 'five'), 'eight');
       assert.equal(longestOfThree('zero', 'seven', 'four'), 'seven');
@@ -212,7 +212,7 @@ window.onload = function() {
     });
   });
 
-  suite('#iceCreamPosition', function() {
+  suite('iceCreamPosition', function() {
     test('returns "not at all" if the ice cream flavor is cardamom', function() {
       assert.equal(iceCreamPosition('warm', 'cardamom'), 'not at all');
       assert.equal(iceCreamPosition('cold', 'cardamom'), 'not at all');
@@ -234,7 +234,7 @@ window.onload = function() {
     });
   });
 
-  suite('#isLeapYear', function() {
+  suite('isLeapYear', function() {
     test('returns true if the number is a leap year, otherwise it does not', function() {
       assert.equal(isLeapYear(1904), true);
       assert.equal(isLeapYear(1912), true);
@@ -256,35 +256,35 @@ window.onload = function() {
     });
   });
 
-  suite('#shout', function() {
+  suite('shout', function() {
     test('converts the argument to uppercase letter', function() {
       assert.equal(shout('whoo hoo'), 'WHOO HOO');
       assert.equal(shout('sOmeTHing'), 'SOMETHING');
     });
   });
 
-  suite('#whisper', function() {
+  suite('whisper', function() {
     test("converts the arguemnt to lowercase letters prefixed by 'shhh...'", function() {
       assert.equal(whisper('bAnanA peEl'), 'shhh... banana peel');
       assert.equal(whisper('Tracy Morgan'), 'shhh... tracy morgan');
     });
   });
 
-  suite('#stopAt', function() {
+  suite('stopAt', function() {
     test('returns the first argument up to the last argument', function() {
       assert.equal(stopAt('check this out now', 'out'), 'check this');
       assert.equal(stopAt('turn on the TV', 'the'), 'turn on');
     });
   });
 
-  suite('#capitalize', function() {
+  suite('capitalize', function() {
     test('returns the message with the first letter capitalized', function() {
       assert.equal(capitalize('secret bitcoin mine'), 'Secret bitcoin mine');
       assert.equal(capitalize('british football'), 'British football');
     });
   });
 
-  suite('#leftPad5', function() {
+  suite('leftPad5', function() {
     test('returns the argument with padded by spaces if its length is less than 5', function() {
       assert.equal(leftPad5('a'), '    a');
       assert.equal(leftPad5('go'), '   go');
@@ -298,7 +298,7 @@ window.onload = function() {
     });
   });
 
-  suite('#superPicky', function() {
+  suite('superPicky', function() {
     test("returns 'Thanks! Got it.' if given a string", function() {
       assert.equal(superPicky('hello'), 'Thanks! Got it.');
       assert.equal(superPicky('there'), 'Thanks! Got it.');
@@ -315,7 +315,7 @@ window.onload = function() {
     });
   });
 
-  suite('#calculateTaxRate', function() {
+  suite('calculateTaxRate', function() {
     test('returns a warning if the status is incorrect', function() {
       assert.equal(calculateTaxRate(100, 'separate'), 'Better call an accountant');
       assert.equal(calculateTaxRate(100, 'head of household'), 'Better call an accountant');

@@ -2,7 +2,7 @@ window.onload = function() {
   var assert = chai.assert;
   mocha.setup('tdd');
 
-  suite('#bigSum', function() {
+  suite('bigSum', function() {
     test('adds a bunch of numbers as parameters', function() {
       assert.strictEqual(bigSum(1, 2, 3, 4), 10);
       assert.strictEqual(bigSum(1, -1, 2, -3), -1);
@@ -10,7 +10,7 @@ window.onload = function() {
     });
   });
 
-  suite('#merge', function() {
+  suite('merge', function() {
     test('merges two sorted arrays', function() {
       assert.deepEqual(merge([1, 3, 5], [2, 4, 6]), [1, 2, 3, 4, 5, 6]);
       assert.deepEqual(merge([1, 3, 5], [1, 2]), [1, 1, 2, 3, 5]);
@@ -20,7 +20,7 @@ window.onload = function() {
     });
   });
 
-  suite('#unique', function() {
+  suite('unique', function() {
     test('returns an array with only unique values', function() {
       assert.sameMembers(unique([]), []);
       assert.sameMembers(unique(['a', 'b', 'a', 'c']), ['a', 'b', 'c']);
@@ -28,7 +28,7 @@ window.onload = function() {
     });
   });
 
-  suite('#oldSchoolRomanNumeral', function() {
+  suite('oldSchoolRomanNumeral', function() {
     test('converts a number to a roman numeral in the old school format', function() {
       assert.strictEqual(oldSchoolRomanNumeral(1), 'I');
       assert.strictEqual(oldSchoolRomanNumeral(2), 'II');
@@ -50,7 +50,7 @@ window.onload = function() {
     });
   });
 
-  suite('#newSchoolRomanNumeral', function() {
+  suite('newSchoolRomanNumeral', function() {
     test('converts a number to a roman numeral in the new school format', function() {
       assert.strictEqual(newSchoolRomanNumeral(1), 'I');
       assert.strictEqual(newSchoolRomanNumeral(2), 'II');
