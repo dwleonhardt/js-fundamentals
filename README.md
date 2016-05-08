@@ -3,14 +3,15 @@
 This exercise reinforces the fundamentals of JavaScript and is split into two parts. Part 1 has you wrestling with core JavaScript concepts.
 
 - Primitives
-- Declarations
 - Functions
+- Declarations
 - Globals
 - Operators
 - Control flow
 
 While part 2 builds on the above and has you wrestling with more essential concepts.
 
+- Functions (again)
 - Arrays
 - Objects
 - Iterations
@@ -26,7 +27,7 @@ To complete this exercise, you must do the following.
 
 ### Setup
 
-To get started, get this code onto your machine by following these setup instructions.
+To get started, download this code onto your machine by following these setup instructions.
 
 1. Fork this repository to your own GitHub account.
 1. Clone your forked repository to your development environment.
@@ -45,30 +46,28 @@ Your job is to make all these JavaScript tests pass by completing their respecti
 1. Read the instructions for each puzzle.
 1. Solve the puzzle by writing JavaScript.
 
-To test your puzzle's solution:
+Once it's ready, test your solution.
 
 1. Tab over to the browser with `Command + Tab`.
 1. Refresh the browser with `Command + R`.
 1. Scroll to the puzzle's test and see if it's still red.
 1. Once the test is green, you've solved the puzzle.
 
-Check your work after every small change. You can see how each test invokes the puzzle's function by clicking on the test description.
+You can see how each test invokes the puzzle's function by clicking on the test description.
 
 ![](images/invoked.png)
 
 ### Wrestle with it
 
-You may encounter challenges that seem confusing or impossible. Don't fret! This exercise is designed to challenge you. Resist the urge to just copy-paste code from your classmates, but definitely ask for help and talk to your peers.
+You may encounter challenges that seem confusing or impossible. Don't despair! This exercise is designed to challenge you. Resist the urge to just copy-and-paste code from your classmates, but definitely ask for help and talk to your peers.
 
-### What success looks like
-
-When you're done with the main assignment, your page should look like this. Green check marks next to each exercise means all tests are passing.
+When you're done with the main assignment, your page should look like this. Green check marks next to each test means the entire test suite is passing.
 
 ![](images/passing.png)
 
 ### Bonus
 
-Want more? There's a whole 'nother test suite just waiting for you!
+Looking for more challenge? Well, there's a whole set of bonus puzzles just waiting to be solved!
 
 1. Open the `part1/bonus.html` file in your web browser.
 1. Open the `part1/bonus.js` file in your text editor.
@@ -76,7 +75,7 @@ Want more? There's a whole 'nother test suite just waiting for you!
 
 ### But wait, there's more!
 
-Part 2 is under construction...
+Don't forget about part 2 located in the `part2/` directory. These puzzles will most likely make more sense once your instructor has gone over the next JavaScript concepts in class.
 
 ### Submitting your work
 
