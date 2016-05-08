@@ -83,7 +83,7 @@ Read over the following articles to learn how to deploy this web site to Surge.
 
 A good domain name for this project is `USERNAME-js-fundamentals.surge.sh` where `USERNAME` is your GitHub username in all **lowercase** letters. Once deployed and everything works as you expect, copy the URL to your site and paste it below.
 
-PASTE YOUR URL HERE
+PASTE YOUR SURGE URL HERE
 
 ### Submit your work
 
