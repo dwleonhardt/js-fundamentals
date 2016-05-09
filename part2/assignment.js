@@ -51,8 +51,8 @@ function concatenate(arr) {
 //     str (string)
 //     times (number)
 //
-// Return a new string containing times copies of the input str. For
-// example, given 'hi' and 4, then return 'hihihihi'.
+// Return a new string containing times copies of the input str. For example,
+// given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
   var result = '';
 
