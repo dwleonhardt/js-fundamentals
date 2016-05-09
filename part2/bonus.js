@@ -51,10 +51,9 @@ function merge(arr1, arr2) {
 // ['a', 'b', 'c'].
 function unique(arr) {
   var map = {};
-  var key;
 
-  for (key of arr) {
-    map[key] = true;
+  for (var element of arr) {
+    map[element] = true;
   }
 
   return Object.keys(map);
@@ -97,12 +96,12 @@ function oldSchoolRomanNumeral(num) {
   var result = '';
   var letterCount;
 
-  for (var i = 0; i < denominations.length; i++) {
-    letterCount = Math.floor(num / denominations[i].value);
+  for (var denomination of denominations) {
+    letterCount = Math.floor(num / denomination.value);
 
     if (letterCount > 0) {
-      result += denominations[i].letter.repeat(letterCount);
-      num %= denominations[i].value;
+      result += denomination.letter.repeat(letterCount);
+      num %= denomination.value;
     }
   }
 
@@ -158,12 +157,12 @@ function newSchoolRomanNumeral(num) {
   var result = '';
   var letterCount;
 
-  for (var i = 0; i < denominations.length; i++) {
-    letterCount = Math.floor(num / denominations[i].value);
+  for (var denomination of denominations) {
+    letterCount = Math.floor(num / denomination.value);
 
     if (letterCount > 0) {
-      result += denominations[i].letter.repeat(letterCount);
-      num %= denominations[i].value;
+      result += denomination.letter.repeat(letterCount);
+      num %= denomination.value;
     }
   }
 

@@ -42,13 +42,16 @@ function concatenate(arr) {
   }
 
   return str;
+
+  // or...
+  // return arr.join('');
 }
 
 // Define a function named repeat that takes in two arguments.
-//     input (string)
-//     integer (number)
+//     str (string)
+//     times (number)
 //
-// Return a new string containing integer copies of the input string. For
+// Return a new string containing times copies of the input str. For
 // example, given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
   var result = '';
@@ -58,6 +61,9 @@ function repeat(str, times) {
   }
 
   return result;
+
+  // or...
+  // return str.repeat(times);
 }
 
 // Define a function named filterPassingGrades that takes in one argument.
@@ -65,23 +71,28 @@ function repeat(str, times) {
 //
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
-function filterPassingGrades(arr) {
+function filterPassingGrades(grades) {
   var result = [];
 
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] >= 70) {
-      result.push(arr[i]);
+  for (var i = 0; i < grades.length; i++) {
+    if (grades[i] >= 70) {
+      result.push(grades[i]);
     }
   }
 
+  return result;
+
   // or...
-  // for (grade of arr) {
+  // var result = [];
+  //
+  // for (var grade of grades) {
   //   if (grade >= 70) {
   //     result.push(grade);
   //   }
   // }
+  //
+  // return result;
 
-  return result;
 }
 
 // Define a function named replace that takes in three arguments.
@@ -100,6 +111,9 @@ function replace(arr, from, to) {
     } else {
       result.push(arr[i]);
     }
+
+    // or...
+    // result.push(arr[i] === from ? to : arr[i]);
   }
 
   return result;
@@ -117,8 +131,8 @@ function replace(arr, from, to) {
 function flatten(arr) {
   var result = [];
 
-  for (var i = 0; i < arr.length; i++) {
-    result = result.concat(arr[i]);
+  for (var element of arr) {
+    result = result.concat(element);
   }
 
   return result;
@@ -141,7 +155,10 @@ function max(arr) {
   return val;
 
   // or...
-  // Math.max(...arr);
+  // return Math.max.apply(null, arr);
+
+  // or...
+  // return Math.max(...arr);
 }
 
 // Define a function named min that takes in one argument.
@@ -161,7 +178,10 @@ function min(arr) {
   return val;
 
   // or...
-  // Math.min(...arr);
+  // return Math.min.apply(null, arr);
+
+  // or...
+  // return Math.min(...arr);
 }
 
 // Define a function named mean that takes in one argument.
@@ -196,7 +216,9 @@ function median(arr) {
   var sorted = arr.sort();
 
   if (sorted.length % 2 === 0) {
-    var lower = sorted[sorted.length / 2 - 1];
+    var lowerIndex = sorted.length / 2 - 1;
+    var lower = sorted[lowerIndex];
+
     var upper = sorted[sorted.length / 2];
 
     return mean([lower, upper]);
@@ -211,20 +233,19 @@ function median(arr) {
 //
 // Return true if that string exists in the array, otherwise false.
 function contains(arr, str) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === str) {
+  for (var element of arr) {
+    if (element === str) {
       return true;
     }
   }
 
-  // or...
-  // for (element of arr) {
-  //   if (element === str) {
-  //     return true;
-  //   }
-  // }
-
   return false;
+
+  // or...
+  // return arr.indexOf(str) !== -1;
+
+  // or...
+  // return arr.includes(str);
 }
 
 // Define a function named distance that takes in two arguments.
@@ -253,17 +274,20 @@ function distance(point1, point2) {
 // Return a new object that has the key-value pairs of both objects. For
 // example, given { a: 1 } and { b: 2 }, then return { a: 1, b: 2 }.
 function combine(obj1, obj2) {
-  var object = {};
+  var result = {};
 
   for (var key in obj1) {
-    object[key] = obj1[key];
+    result[key] = obj1[key];
   }
 
   for (var key in obj2) {
-    object[key] = obj2[key];
+    result[key] = obj2[key];
   }
 
-  return object;
+  return result;
+
+  // or...
+  // return Object.assign({}, obj1, obj2);
 }
 
 // Define a function called invert that takes in one argument.
@@ -272,15 +296,15 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  var object = {};
+  var result = {};
   var value;
 
   for (var key in obj) {
     value = obj[key];
-    object[value] = key;
+    result[value] = key;
   }
 
-  return object;
+  return result;
 }
 
 // Define a function named values that takes in one argument.
@@ -305,31 +329,31 @@ function values(obj) {
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 function toPairs(obj) {
-  var array = [];
+  var result = [];
   var pair;
 
-  for (key in obj) {
+  for (var key in obj) {
     pair = [key, obj[key]];
-    array.push(pair);
+    result.push(pair);
   }
 
-  return array;
+  return result;
 }
 
 // Define a function called fromPairs that takes in one argument.
 //    arr (array)
 //
-// Return a new object where each key-value pair is a from an element in the
+// Return a new object where each key-value pair is from an element in the
 // argument. For example, given [['a', 1], ['b', 2]], then return
 // { a: 1, b: 2 }.
 function fromPairs(arr) {
-  var object = {};
+  var result = {};
 
-  for (var i = 0; i < arr.length; i++) {
-    object[arr[i][0]] = arr[i][1];
+  for (var pair of arr) {
+    result[pair[0]] = pair[1];
   }
 
-  return object;
+  return result;
 }
 
 // Define a function named pluck that takes in two arguments.
@@ -349,8 +373,8 @@ function fromPairs(arr) {
 function pluck(arr, key) {
   var result = [];
 
-  for (var i = 0; i < arr.length; i++) {
-    result.push(arr[i][key])
+  for (var obj of arr) {
+    result.push(obj[key])
   }
 
   return result;
@@ -365,7 +389,7 @@ function pluck(arr, key) {
 // { name: 'moe', age: 50 }.
 function pick(obj, keys) {
   var result = {};
-  var pick;
+  var key;
 
   for (var i = 0; i < keys.length; i++) {
     key = keys[i];
