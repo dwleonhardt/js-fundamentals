@@ -74,6 +74,13 @@ function filterPassingGrades(arr) {
     }
   }
 
+  // or...
+  // for (grade of arr) {
+  //   if (grade >= 70) {
+  //     result.push(grade);
+  //   }
+  // }
+
   return result;
 }
 
@@ -133,7 +140,7 @@ function max(arr) {
 
   return val;
 
-  // or ...
+  // or...
   // Math.max(...arr);
 }
 
@@ -153,7 +160,7 @@ function min(arr) {
 
   return val;
 
-  // or ...
+  // or...
   // Math.min(...arr);
 }
 
@@ -209,6 +216,13 @@ function contains(arr, str) {
       return true;
     }
   }
+
+  // or...
+  // for (element of arr) {
+  //   if (element === str) {
+  //     return true;
+  //   }
+  // }
 
   return false;
 }

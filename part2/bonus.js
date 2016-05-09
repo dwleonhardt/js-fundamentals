@@ -51,9 +51,10 @@ function merge(arr1, arr2) {
 // ['a', 'b', 'c'].
 function unique(arr) {
   var map = {};
+  var key;
 
-  for (var i = 0; i < arr.length; i++) {
-    map[arr[i]] = true;
+  for (key of arr) {
+    map[key] = true;
   }
 
   return Object.keys(map);
