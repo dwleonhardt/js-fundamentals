@@ -149,25 +149,5 @@ window.onload = function() {
     });
   });
 
-  suite('pluck', function() {
-    test('grabs the values from an array of object for a specific key', function() {
-      assert.deepEqual(pluck([], 'foo'), []);
-      var stooges = [
-        {name: 'moe', age: 40},
-        {name: 'larry', age: 50},
-        {name: 'curly', age: 60}
-      ];
-      assert.deepEqual(pluck(stooges, 'name'), ['moe', 'larry', 'curly']);
-    });
-  });
-
-  suite('pick', function() {
-    test('picks an array of property names from an object', function() {
-      assert.deepEqual(pick({name: 'moe', age: 50, userid: 'moe1'}, []), {});
-      assert.deepEqual(pick({name: 'moe', age: 50, userid: 'moe1'},
-        ['name', 'age']), {name: 'moe', age: 50});
-    });
-  });
-
   mocha.run();
 };

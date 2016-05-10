@@ -1,3 +1,46 @@
+// Define a function named pluck that takes in two arguments.
+//     arr (array of objects)
+//     key (string)
+//
+// Return a new array where each element is the keyed value of each object.
+//
+// For example, given the array:
+//    [
+//      { name: 'moe', age: 40 },
+//      { name: 'larry', age: 50 },
+//      { name: 'curly', age: 60 }
+//    ]
+//
+// and the key 'name', then return ['moe', 'larry', 'curly'].
+function pluck(arr, key) {
+  var result = [];
+
+  for (var obj of arr) {
+    result.push(obj[key])
+  }
+
+  return result;
+}
+
+// Define a function named pick that takes in two arguments.
+//    obj (object)
+//    keys (array of strings)
+//
+// Return a new object that contains only the specified keys. For example, given
+// { name: 'moe', age: 50, id: 1 } and ['name', 'age'], then return
+// { name: 'moe', age: 50 }.
+function pick(obj, keys) {
+  var result = {};
+  var key;
+
+  for (var i = 0; i < keys.length; i++) {
+    key = keys[i];
+    result[key] = obj[key];
+  }
+
+  return result;
+}
+
 // Define a function named bigSum that takes in an arbitrary number of
 // arguments. Assume all arguments are a number.
 //
@@ -57,114 +100,4 @@ function unique(arr) {
   }
 
   return Object.keys(map);
-}
-
-// In the early days of Roman numerals, the Romans didn't bother with any of
-// this new-fangled subtraction 'IX' nonsense. No sir, it was straight addition,
-// biggest to littlest. So 9 was written 'VIIII' and so on.
-//
-// Define a function called oldSchoolRomanNumeral that takes in one argument.
-//     num (number between 1 and 1000)
-//
-// Return a string that represents the roman numeral in the old school format.
-// For example, given 9, then return 'VIIII'.
-//
-// TIP #1: Here's a mapping of Roman to Arabic numerals.
-//
-//   1000 = M
-//    500 = D
-//    100 = C
-//     50 = L
-//     10 = X
-//      5 = V
-//      1 = I
-//
-// TIP #2: The Math.floor() and remainder functions will be helpful.
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
-function oldSchoolRomanNumeral(num) {
-  var denominations = [
-    { letter: 'M', value: 1000 },
-    { letter: 'D', value: 500 },
-    { letter: 'C', value: 100 },
-    { letter: 'L', value: 50 },
-    { letter: 'X', value: 10 },
-    { letter: 'V', value: 5 },
-    { letter: 'I', value: 1 }
-  ];
-
-  var result = '';
-  var letterCount;
-
-  for (var denomination of denominations) {
-    letterCount = Math.floor(num / denomination.value);
-
-    if (letterCount > 0) {
-      result += denomination.letter.repeat(letterCount);
-      num %= denomination.value;
-    }
-  }
-
-  return result;
-}
-
-// Eventually, someone thought it would be terribly clever if putting a smaller
-// number before a larger one meant you had to subtract the smaller one. As a
-// result of this development, you must now suffer.
-//
-// Define a function called newSchoolRomanNumeral that takes in one argument.
-//     num (number between 1 and 1000)
-//
-// Return a string that represents the roman numeral in the new school format.
-// For example, given 9, then return 'IX'.
-//
-// TIP #1: Here's a mapping of Roman to Arabic numerals:
-//
-//   1000 = M
-//    900 = CM
-//    500 = D
-//    400 = CD
-//    100 = C
-//     90 = XC
-//     50 = L
-//     40 = XL
-//     10 = X
-//      9 = IX
-//      5 = V
-//      4 = IV
-//      1 = I
-//
-// TIP #2: The Math.floor() and remainder functions will be helpful.
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
-function newSchoolRomanNumeral(num) {
-  var denominations = [
-    { letter: 'M', value: 1000 },
-    { letter: 'CM', value: 900 },
-    { letter: 'D', value: 500 },
-    { letter: 'CD', value: 400 },
-    { letter: 'C', value: 100 },
-    { letter: 'XC', value: 90 },
-    { letter: 'L', value: 50 },
-    { letter: 'XL', value: 40 },
-    { letter: 'X', value: 10 },
-    { letter: 'IX', value: 9 },
-    { letter: 'V', value: 5 },
-    { letter: 'IV', value: 4 },
-    { letter: 'I', value: 1 }
-  ];
-
-  var result = '';
-  var letterCount;
-
-  for (var denomination of denominations) {
-    letterCount = Math.floor(num / denomination.value);
-
-    if (letterCount > 0) {
-      result += denomination.letter.repeat(letterCount);
-      num %= denomination.value;
-    }
-  }
-
-  return result;
 }
