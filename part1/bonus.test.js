@@ -2,140 +2,127 @@ window.onload = function() {
   mocha.setup('tdd');
   var assert = chai.assert;
 
-  suite('caesarAdd13', function(){
-    test('it adds 13 to the number, wrapping it back to 97 once it hits 122', function(){
-      assert.equal(caesarAdd13(97),   110);
-      assert.equal(caesarAdd13(98),   111);
-      assert.equal(caesarAdd13(99),   112);
-      assert.equal(caesarAdd13(100),  113);
-      assert.equal(caesarAdd13(101),  114);
-      assert.equal(caesarAdd13(102),  115);
-      assert.equal(caesarAdd13(103),  116);
-      assert.equal(caesarAdd13(104),  117);
-      assert.equal(caesarAdd13(105),  118);
-      assert.equal(caesarAdd13(106),  119);
-      assert.equal(caesarAdd13(107),  120);
-      assert.equal(caesarAdd13(108),  121);
-      assert.equal(caesarAdd13(109),  122);
-      assert.equal(caesarAdd13(110),   97);
-      assert.equal(caesarAdd13(111),   98);
-      assert.equal(caesarAdd13(112),   99);
-      assert.equal(caesarAdd13(113),  100);
-      assert.equal(caesarAdd13(114),  101);
-      assert.equal(caesarAdd13(115),  102);
-      assert.equal(caesarAdd13(116),  103);
-      assert.equal(caesarAdd13(117),  104);
-      assert.equal(caesarAdd13(118),  105);
-      assert.equal(caesarAdd13(119),  106);
-      assert.equal(caesarAdd13(120),  107);
-      assert.equal(caesarAdd13(121),  108);
-      assert.equal(caesarAdd13(122),  109);
+  suite('caesarShiftInt', function() {
+    test('throws an error if the number is less than 97', function() {
+      assert.throws(caesarShiftInt.bind(null, 50), 'Error: integer too low');
+      assert.throws(caesarShiftInt.bind(null, 90), 'Error: integer too low');
     });
 
-    test('it throws an error if the number is less than 97', function(){
-      assert.throws(caesarAdd13.bind({}, 50), 'Doh!  Too low.');
-      assert.throws(caesarAdd13.bind({}, 90), 'Doh!  Too low.');
+    test('throws an error if the number is greater than 122', function() {
+      assert.throws(caesarShiftInt.bind(null, 123), 'Error: integer too high');
+      assert.throws(caesarShiftInt.bind(null, 149), 'Error: integer too high');
     });
-
-    test('it throws an error if the number is greater than 122', function(){
-      assert.throws(caesarAdd13.bind({}, 123), 'Doh!  Too high.');
-      assert.throws(caesarAdd13.bind({}, 149), 'Doh!  Too high.');
-    });
-
-  });
-
-  suite('caesarSubtract13', function(){
-    test('it subtracts 13 to the number, wrapping it back to 122 once it hits 97', function(){
-      assert.equal(caesarSubtract13(122),  109);
-      assert.equal(caesarSubtract13(121),  108);
-      assert.equal(caesarSubtract13(120),  107);
-      assert.equal(caesarSubtract13(119),  106);
-      assert.equal(caesarSubtract13(118),  105);
-      assert.equal(caesarSubtract13(117),  104);
-      assert.equal(caesarSubtract13(116),  103);
-      assert.equal(caesarSubtract13(115),  102);
-      assert.equal(caesarSubtract13(114),  101);
-      assert.equal(caesarSubtract13(113),  100);
-      assert.equal(caesarSubtract13(112),   99);
-      assert.equal(caesarSubtract13(111),   98);
-      assert.equal(caesarSubtract13(110),   97);
-      assert.equal(caesarSubtract13(109),  122);
-      assert.equal(caesarSubtract13(108),  121);
-      assert.equal(caesarSubtract13(107),  120);
-      assert.equal(caesarSubtract13(106),  119);
-      assert.equal(caesarSubtract13(105),  118);
-      assert.equal(caesarSubtract13(104),  117);
-      assert.equal(caesarSubtract13(103),  116);
-      assert.equal(caesarSubtract13(102),  115);
-      assert.equal(caesarSubtract13(101),  114);
-      assert.equal(caesarSubtract13(100),  113);
-      assert.equal(caesarSubtract13(99),   112);
-      assert.equal(caesarSubtract13(98),   111);
-      assert.equal(caesarSubtract13(97),   110);
-    });
-
-    test('it throws an error if the number is less than 97', function(){
-      assert.throws(caesarSubtract13.bind({}, 50), 'Doh!  Too low.');
-      assert.throws(caesarSubtract13.bind({}, 90), 'Doh!  Too low.');
-    });
-
-    test('it throws an error if the number is greater than 122', function(){
-      assert.throws(caesarSubtract13.bind({}, 123), 'Doh!  Too high.');
-      assert.throws(caesarSubtract13.bind({}, 149), 'Doh!  Too high.');
-    });
-
-  });
-
-  suite('encodeChar', function(){
-    test('it encodes a character', function(){
-      assert.equal(encodeChar('a'),  'n');
-      assert.equal(encodeChar('b'),  'o');
-      assert.equal(encodeChar('c'),  'p');
-      assert.equal(encodeChar('d'),  'q');
-      assert.equal(encodeChar('e'),  'r');
-      assert.equal(encodeChar('f'),  's');
-      assert.equal(encodeChar('g'),  't');
-      assert.equal(encodeChar('h'),  'u');
-      assert.equal(encodeChar('i'),  'v');
-      assert.equal(encodeChar('j'),  'w');
-      assert.equal(encodeChar('k'),  'x');
-      assert.equal(encodeChar('l'),  'y');
-      assert.equal(encodeChar('m'),  'z');
-      assert.equal(encodeChar('n'),  'a');
-      assert.equal(encodeChar('o'),  'b');
-      assert.equal(encodeChar('p'),  'c');
-      assert.equal(encodeChar('q'),  'd');
-      assert.equal(encodeChar('r'),  'e');
-      assert.equal(encodeChar('s'),  'f');
-      assert.equal(encodeChar('t'),  'g');
-      assert.equal(encodeChar('u'),  'h');
-      assert.equal(encodeChar('v'),  'i');
-      assert.equal(encodeChar('w'),  'j');
-      assert.equal(encodeChar('x'),  'k');
-      assert.equal(encodeChar('y'),  'l');
-      assert.equal(encodeChar('z'),  'm');
-    });
-
-    test('it lowercases the letter', function(){
-      assert.equal(encodeChar('A'),  'n');
-      assert.equal(encodeChar('B'),  'o');
-      assert.equal(encodeChar('C'),  'p');
+    
+    test('shifts the number 13 places, wrapping it back to 97 once it hits 122', function() {
+      assert.strictEqual(caesarShiftInt(97),  110);
+      assert.strictEqual(caesarShiftInt(98),  111);
+      assert.strictEqual(caesarShiftInt(99),  112);
+      assert.strictEqual(caesarShiftInt(100), 113);
+      assert.strictEqual(caesarShiftInt(101), 114);
+      assert.strictEqual(caesarShiftInt(102), 115);
+      assert.strictEqual(caesarShiftInt(103), 116);
+      assert.strictEqual(caesarShiftInt(104), 117);
+      assert.strictEqual(caesarShiftInt(105), 118);
+      assert.strictEqual(caesarShiftInt(106), 119);
+      assert.strictEqual(caesarShiftInt(107), 120);
+      assert.strictEqual(caesarShiftInt(108), 121);
+      assert.strictEqual(caesarShiftInt(109), 122);
+      assert.strictEqual(caesarShiftInt(110),  97);
+      assert.strictEqual(caesarShiftInt(111),  98);
+      assert.strictEqual(caesarShiftInt(112),  99);
+      assert.strictEqual(caesarShiftInt(113), 100);
+      assert.strictEqual(caesarShiftInt(114), 101);
+      assert.strictEqual(caesarShiftInt(115), 102);
+      assert.strictEqual(caesarShiftInt(116), 103);
+      assert.strictEqual(caesarShiftInt(117), 104);
+      assert.strictEqual(caesarShiftInt(118), 105);
+      assert.strictEqual(caesarShiftInt(119), 106);
+      assert.strictEqual(caesarShiftInt(120), 107);
+      assert.strictEqual(caesarShiftInt(121), 108);
+      assert.strictEqual(caesarShiftInt(122), 109);
     });
   });
 
-  suite('encodeMessage', function(){
-    test('it encodes a message', function(){
-      assert.equal(encodeMessage('Wow this is cool'),  'jbj guvf vf pbby');
-      assert.equal(encodeMessage('SUPER SECRET'),  'fhcre frperg');
-      assert.equal(encodeMessage('Hello, there!'),  'uryyb, gurer!');
+  suite('caesarShiftChar', function() {
+    test("doesn't shift a punctuation character", function() {
+      assert.strictEqual(caesarShiftChar('.'), '.');
+      assert.strictEqual(caesarShiftChar('`'), '`');
+      assert.strictEqual(caesarShiftChar('{'), '{');
+      assert.strictEqual(caesarShiftChar('|'), '|');
+    });
+
+    test('shift a single lowercase character', function() {
+      assert.strictEqual(caesarShiftChar('a'), 'n');
+      assert.strictEqual(caesarShiftChar('b'), 'o');
+      assert.strictEqual(caesarShiftChar('c'), 'p');
+      assert.strictEqual(caesarShiftChar('d'), 'q');
+      assert.strictEqual(caesarShiftChar('e'), 'r');
+      assert.strictEqual(caesarShiftChar('f'), 's');
+      assert.strictEqual(caesarShiftChar('g'), 't');
+      assert.strictEqual(caesarShiftChar('h'), 'u');
+      assert.strictEqual(caesarShiftChar('i'), 'v');
+      assert.strictEqual(caesarShiftChar('j'), 'w');
+      assert.strictEqual(caesarShiftChar('k'), 'x');
+      assert.strictEqual(caesarShiftChar('l'), 'y');
+      assert.strictEqual(caesarShiftChar('m'), 'z');
+      assert.strictEqual(caesarShiftChar('n'), 'a');
+      assert.strictEqual(caesarShiftChar('o'), 'b');
+      assert.strictEqual(caesarShiftChar('p'), 'c');
+      assert.strictEqual(caesarShiftChar('q'), 'd');
+      assert.strictEqual(caesarShiftChar('r'), 'e');
+      assert.strictEqual(caesarShiftChar('s'), 'f');
+      assert.strictEqual(caesarShiftChar('t'), 'g');
+      assert.strictEqual(caesarShiftChar('u'), 'h');
+      assert.strictEqual(caesarShiftChar('v'), 'i');
+      assert.strictEqual(caesarShiftChar('w'), 'j');
+      assert.strictEqual(caesarShiftChar('x'), 'k');
+      assert.strictEqual(caesarShiftChar('y'), 'l');
+      assert.strictEqual(caesarShiftChar('z'), 'm');
+    });
+
+    test('shifts a single uppercase character', function() {
+      assert.strictEqual(caesarShiftChar('A'), 'n');
+      assert.strictEqual(caesarShiftChar('B'), 'o');
+      assert.strictEqual(caesarShiftChar('C'), 'p');
+      assert.strictEqual(caesarShiftChar('D'), 'q');
+      assert.strictEqual(caesarShiftChar('E'), 'r');
+      assert.strictEqual(caesarShiftChar('F'), 's');
+      assert.strictEqual(caesarShiftChar('G'), 't');
+      assert.strictEqual(caesarShiftChar('H'), 'u');
+      assert.strictEqual(caesarShiftChar('I'), 'v');
+      assert.strictEqual(caesarShiftChar('J'), 'w');
+      assert.strictEqual(caesarShiftChar('K'), 'x');
+      assert.strictEqual(caesarShiftChar('L'), 'y');
+      assert.strictEqual(caesarShiftChar('M'), 'z');
+      assert.strictEqual(caesarShiftChar('N'), 'a');
+      assert.strictEqual(caesarShiftChar('O'), 'b');
+      assert.strictEqual(caesarShiftChar('P'), 'c');
+      assert.strictEqual(caesarShiftChar('Q'), 'd');
+      assert.strictEqual(caesarShiftChar('R'), 'e');
+      assert.strictEqual(caesarShiftChar('S'), 'f');
+      assert.strictEqual(caesarShiftChar('T'), 'g');
+      assert.strictEqual(caesarShiftChar('U'), 'h');
+      assert.strictEqual(caesarShiftChar('V'), 'i');
+      assert.strictEqual(caesarShiftChar('W'), 'j');
+      assert.strictEqual(caesarShiftChar('X'), 'k');
+      assert.strictEqual(caesarShiftChar('Y'), 'l');
+      assert.strictEqual(caesarShiftChar('Z'), 'm');
     });
   });
 
-  suite('decodeMessage', function(){
-    test('it encodes a message', function(){
-      assert.equal(decodeMessage('jbj guvf vf pbby'),  'wow this is cool');
-      assert.equal(decodeMessage('fhcre frperg'),  'super secret');
-      assert.equal(decodeMessage('uryyb, gurer!'),  'hello, there!');
+  suite('encodeMessage', function() {
+    test('encodes a message', function() {
+      assert.strictEqual(encodeMessage('Wow this is cool'), 'jbj guvf vf pbby');
+      assert.strictEqual(encodeMessage('SUPER SECRET'), 'fhcre frperg');
+      assert.strictEqual(encodeMessage('Hello, there!'), 'uryyb, gurer!');
+    });
+  });
+
+  suite('decodeMessage', function() {
+    test('decodes a message', function() {
+      assert.strictEqual(decodeMessage('jbj guvf vf pbby'), 'wow this is cool');
+      assert.strictEqual(decodeMessage('fhcre frperg'), 'super secret');
+      assert.strictEqual(decodeMessage('uryyb, gurer!'), 'hello, there!');
     });
   });
 

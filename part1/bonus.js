@@ -1,137 +1,112 @@
 /*
-The purpose of this challenge is to be able to encrypt and decrypt a string using the Caesar Cipher.
+The purpose of this challenge is to be able to encode and decode a string using the Caesar cipher.
 
-See https://en.wikipedia.org/wiki/Caesar_cipher
+https://en.wikipedia.org/wiki/Caesar_cipher
 
-Each letter has a numeric representation called an ASCII code. For example, the letter "a" has an ASCII code of 97 and the letter "b" has an ASCII code of 98.
+Each string character has a numeric representation called an ASCII code. For example, the character "a" has an ASCII code of 97 and the character "b" has an ASCII code of 98.
 
-See http://www.asciitable.com/
+https://en.wikipedia.org/wiki/ASCII#ASCII_printable_code_chart
 
-For this problem, you can safely assume you'll just be working with lowercase letters. (i.e. codes 97 to 122)
-
-To convert letters to ASCII codes and ASCII codes back to letters, check out these methods:
+JavaScript has a pair of methods to convert characters to and from ASCII codes.
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
 
-The Caesar Cipher works like this:
+The Caesar cipher works like this.
 
-- If you get a string, such as "a", convert it to a number: 97
-- Add 13 to that number: 110
-- Figure out what character that number represents: 110 => "n"
-- So the final result is that "a" becomes "n"
+- Convert the character "a" to the ASCII code 97.
+- Add 13 to that integer, resulting in 110.
+- Convert the new ASCII code to a character, resulting in "n".
 
-If you add 13 to an ASCII code and it's greater than 122 (i.e. "z"), you'll need to wrap back around to the start of the alphabet. See the tests for context.
+If by adding 13 to an ASCII code results in a number greater than 122 (i.e. "z"), wrap back around to the start of the alphabet.
 
 It'll take a few steps to solve this cipher. Have fun!
 */
 
-
-// Define a function named caesarAdd13 that takes one argument, a number
-// If the number is less than 97
-//    Throw an error with the message "Doh!  Too low.": https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
-// If the number is greater than 122
-//    Throw an error with the message "Doh!  Too high.": https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
-// If that number+13 would be greater than 122 (the ASCII code for "z")
-//    Return a number that is "wrapped" around
-// Otherwise
-//  Return the number plus 13
+// Define a function named caesarShiftInt that takes one argument
+//    integer (number)
 //
-// Example: caesarAdd13(97) => 110
-// Example: caesarAdd13(110) => 97
-function caesarAdd13(number){
-  var lowestCharCode = 97;
-  var highestCharCode = 122;
-  var offset = 13;
+// If the integer is less than 97
+//    Throw an error with the message 'Error: integer too low'
+// If the integer is greater than 122
+//    Throw an error with the message 'Error: integer too low'
+// If the integer + 13 would be greater than 122, the ASCII code for 'z'
+//    Return an integer that is "wrapped" around
+// Otherwise
+//    Return the integer plus 13
+//
+// For example, given 97, then return 110. And given 110, then return 97.
+//
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
+function caesarShiftInt(integer) {
+  var lowest = 97;
+  var highest = 122;
 
-  if (number < lowestCharCode) {
-    throw "Doh!  Too low."
+  if (integer < lowest) {
+    throw 'Error: integer too low'
   }
 
-  if (number > highestCharCode) {
-    throw "Doh!  Too high."
+  if (integer > highest) {
+    throw 'Error: integer too high'
   }
 
-  var result = number + offset;
-  if (result > highestCharCode) {
-    result = lowestCharCode + (result - highestCharCode - 1);
+  var result = integer + 13;
+
+  if (result > highest) {
+    result = lowest + result - highest - 1;
   }
+
   return result;
 }
 
-// Define a function named caesarSubtract13 that takes one argument, a number
-// If the number is less than 97
-//    Throw an error with the message "Doh!  Too low.": https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
-// If the number is greater than 122
-//    Throw an error with the message "Doh!  Too high.": https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
-// If that number-13 would be less than than 97 (the ASCII code for "a")
-//    Return a number that is "wrapped" around
+// Define a function named caesarShiftChar that takes a one argument
+//    char (string of one character)
+//
+// If the string is not a lowercase letter
+//    Return the string as is
 // Otherwise
-//  Return the number minus 13
+//    Return the char shifted using the caesarShiftInt() function
 //
-// Example: caesarSubtract13(97) => 110
-// Example: caesarSubtract13(110) => 97
-function caesarSubtract13(number){
-  var lowestCharCode = 97;
-  var highestCharCode = 122;
-  var offset = 13;
-
-  if (number < lowestCharCode) {
-    throw "Doh!  Too low."
-  }
-
-  if (number > highestCharCode) {
-    throw "Doh!  Too high."
-  }
-
-  var result = number - offset;
-  if (result < lowestCharCode) {
-    result = highestCharCode - (lowestCharCode - result - 1);
-  }
-  return result;
-}
-
-// Define a function named encodeChar that takes a single argument: a 1-character string
-// Return the encoded version of that string
-//
-// HINT: which of your functions would you use to encode the character?
+// For example, given '!', then return '!'. But given 'a' or 'A', return 'n'.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
-function encodeChar(string) {
-  return String.fromCharCode(caesarSubtract13(string.toLowerCase().charCodeAt(0)));
+//
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+function caesarShiftChar(char) {
+  var charCode = char.toLowerCase().charCodeAt(0);
+
+  if (charCode < 97 || charCode > 122) {
+    return char;
+  }
+
+  return String.fromCharCode(caesarShiftInt(charCode));
 }
 
-// Define a function named encodeMessage that takes a single argument: a string
-// Return the encoded version of that entire string, according to these rules:
-//   - if the character is not a letter, just keep it as is.
+// Define a function named encodeMessage that takes a one argument
+//    message (string)
 //
-// Example: "Hello, there!" => "uryyb, gurer!"
+// Return the encoded version of the message. For example, given
+// 'Hello, there!', then return 'uryyb, gurer!'.
 //
-// HINT: you'll need a loop for this
-//
-function encodeMessage(string) {
-  var result = "";
-  for (var i = 0; i < string.length; i++) {
-    var charCode = string.toLowerCase().charCodeAt(i);
-    if (charCode >= 97 && charCode <= 122) {
-      result += encodeChar(string[i]);
-    } else {
-      result += string[i]
-    }
+// HINT: You'll need a loop for this.
+function encodeMessage(message) {
+  var result = '';
+
+  for (var char of message) {
+    result += caesarShiftChar(char);
   }
+
   return result;
 }
 
-// Define a function named decodeMessage that takes a single argument: a string
-// Return the decoded version of that entire string, according to these rules:
-//   - if the character is not a letter, just keep it as is.
+// Define a function named decodeMessage that takes a one argument
+//    message (string)
 //
-// Example: "uryyb, gurer!" => "Hello, there!"
-function decodeMessage(string) {
-  return encodeMessage(string);
+// Return the decoded version of the message. For example, given
+// 'uryyb, gurer!', then return 'Hello, there!'.
+//
+// HINT: Is there a way to use the encodeMessage() function?
+function decodeMessage(message) {
+  return encodeMessage(message);
 }
-
-// SUPER BONUS
-// Figure out how to maintain the case of the letters, so that "Hello, there!" becomes "Uryyb, gurer!" and vice-versa
-// Change the tests in order to make this happen
