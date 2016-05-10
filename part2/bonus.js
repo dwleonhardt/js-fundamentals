@@ -1,3 +1,20 @@
+// Define a function named bigSum that takes in an arbitrary number of
+// arguments. Assume all arguments are a number.
+//
+// Return the sum of all of the arguments. For example, given 1, 2, 3, and 4,
+// then return 10. If there are no arguments, return 0.
+//
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+function bigSum() {
+  var sum = 0;
+
+  for (var i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+
+  return sum;
+}
+
 // Define a function named pluck that takes in two arguments.
 //     arr (array of objects)
 //     key (string)
@@ -39,23 +56,6 @@ function pick(obj, keys) {
   }
 
   return result;
-}
-
-// Define a function named bigSum that takes in an arbitrary number of
-// arguments. Assume all arguments are a number.
-//
-// Return the sum of all of the arguments. For example, given 1, 2, 3, and 4,
-// then return 10. If there are no arguments, return 0.
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
-function bigSum() {
-  var sum = 0;
-
-  for (var i = 0; i < arguments.length; i++) {
-    sum += arguments[i];
-  }
-
-  return sum;
 }
 
 // Define a function named merge that takes in two arguments.

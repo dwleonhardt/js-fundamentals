@@ -125,6 +125,14 @@ window.onload = function() {
     });
   });
 
+  suite('values', function() {
+    test('returns values of an object', function() {
+      assert.deepEqual(values({}), []);
+      assert.deepEqual(values({a: 1, b: 'foo'}), [1, 'foo']);
+      assert.deepEqual(values({b: 'foo'}), ['foo']);
+    });
+  });
+
   suite('toPairs', function() {
     test('returns a new array where each element is a key-value pair array', function() {
       assert.deepEqual(toPairs({a: 1}), [['a', 1]]);
@@ -138,14 +146,6 @@ window.onload = function() {
       assert.deepEqual(fromPairs([['a', 1]]), {a: 1});
       assert.deepEqual(fromPairs([['a', 1], ['b', 2]]), {a: 1, b: 2});
       assert.deepEqual(fromPairs([]), {});
-    });
-  });
-
-  suite('values', function() {
-    test('returns values of an object', function() {
-      assert.deepEqual(values({}), []);
-      assert.deepEqual(values({a: 1, b: 'foo'}), [1, 'foo']);
-      assert.deepEqual(values({b: 'foo'}), ['foo']);
     });
   });
 

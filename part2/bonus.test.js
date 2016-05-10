@@ -2,6 +2,14 @@ window.onload = function() {
   var assert = chai.assert;
   mocha.setup('tdd');
 
+  suite('bigSum', function() {
+    test('adds a bunch of numbers as parameters', function() {
+      assert.strictEqual(bigSum(1, 2, 3, 4), 10);
+      assert.strictEqual(bigSum(1, -1, 2, -3), -1);
+      assert.strictEqual(bigSum(), 0);
+    });
+  });
+
   suite('pluck', function() {
     test('grabs the values from an array of object for a specific key', function() {
       var stooges = [
@@ -21,14 +29,6 @@ window.onload = function() {
 
       assert.deepEqual(pick([], []), {});
       assert.deepEqual(pick(stooge, ['name', 'age']), { name: 'moe', age: 50 });
-    });
-  });
-
-  suite('bigSum', function() {
-    test('adds a bunch of numbers as parameters', function() {
-      assert.strictEqual(bigSum(1, 2, 3, 4), 10);
-      assert.strictEqual(bigSum(1, -1, 2, -3), -1);
-      assert.strictEqual(bigSum(), 0);
     });
   });
 
