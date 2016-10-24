@@ -40,8 +40,8 @@ It'll take a few steps to solve this cipher. Have fun!
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
 function caesarShiftInt(integer) {
-  var lowest = 97;
-  var highest = 122;
+  const lowest = 97;
+  const highest = 122;
 
   if (integer < lowest) {
     throw 'Error: integer too low'
@@ -51,7 +51,7 @@ function caesarShiftInt(integer) {
     throw 'Error: integer too high'
   }
 
-  var result = integer + 13;
+  let result = integer + 13;
 
   if (result > highest) {
     result = lowest + result - highest - 1;
@@ -74,7 +74,7 @@ function caesarShiftInt(integer) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
 function caesarShiftChar(char) {
-  var charCode = char.toLowerCase().codePointAt(0);
+  const charCode = char.toLowerCase().codePointAt(0);
 
   if (charCode < 97 || charCode > 122) {
     return char;
@@ -91,7 +91,7 @@ function caesarShiftChar(char) {
 //
 // HINT: You'll need a loop for this.
 function encodeMessage(message) {
-  var result = '';
+  let result = '';
 
   for (var char of message) {
     result += caesarShiftChar(char);
