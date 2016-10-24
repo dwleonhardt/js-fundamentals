@@ -64,7 +64,7 @@ function caesarShiftInt(integer) {
   return result;
 }
 
-/ Define a function named caesarShiftChar that takes a one argument
+// Define a function named caesarShiftChar that takes a one argument
 //    char (string of one character)
 //
 // If the string is not a lowercase letter
