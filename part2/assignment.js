@@ -4,9 +4,9 @@
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
-  var sum = 0;
+  let sum = 0;
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
   }
 
@@ -19,9 +19,9 @@ function sum(arr) {
 // Return the product of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
 function product(arr) {
-  var product = 1;
+  let product = 1;
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     product *= arr[i];
   }
 
@@ -35,9 +35,9 @@ function product(arr) {
 // ['hello', 'my', 'name', 'is', 'ken'], then return 'hellomynameisken'. If the
 // array is empty, return ''.
 function concatenate(arr) {
-  var str = '';
+  let str = '';
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     str += arr[i];
   }
 
@@ -54,9 +54,9 @@ function concatenate(arr) {
 // Return a new string containing times copies of the input str. For example,
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
-  var result = '';
+  let result = '';
 
-  for (var i = 0; i < times; i++) {
+  for (let i = 0; i < times; i++) {
     result += str;
   }
 
@@ -72,9 +72,9 @@ function repeat(str, times) {
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
 function filterPassingGrades(grades) {
-  var result = [];
+  let result = [];
 
-  for (var i = 0; i < grades.length; i++) {
+  for (let i = 0; i < grades.length; i++) {
     if (grades[i] >= 70) {
       result.push(grades[i]);
     }
@@ -103,9 +103,9 @@ function filterPassingGrades(grades) {
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
-  var result = [];
+  let result = [];
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] === from) {
       result.push(to);
     } else {
@@ -129,9 +129,9 @@ function replace(arr, from, to) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 function flatten(arr) {
-  var result = [];
+  let result = [];
 
-  for (var element of arr) {
+  for (let element of arr) {
     result = result.concat(element);
   }
 
@@ -146,9 +146,9 @@ function flatten(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function max(arr) {
-  var val = -Infinity
+  let val = -Infinity
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     val = Math.max(val, arr[i]);
   }
 
@@ -169,9 +169,9 @@ function max(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
 function min(arr) {
-  var val = Infinity
+  let val = Infinity
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     val = Math.min(val, arr[i]);
   }
 
@@ -213,13 +213,13 @@ function median(arr) {
     return null;
   }
 
-  var sorted = arr.sort();
+  const sorted = arr.sort();
 
   if (sorted.length % 2 === 0) {
-    var lowerIndex = sorted.length / 2 - 1;
-    var lower = sorted[lowerIndex];
+    const lowerIndex = sorted.length / 2 - 1;
+    const lower = sorted[lowerIndex];
 
-    var upper = sorted[sorted.length / 2];
+    const upper = sorted[sorted.length / 2];
 
     return mean([lower, upper]);
   } else {
@@ -233,7 +233,7 @@ function median(arr) {
 //
 // Return true if that string exists in the array, otherwise false.
 function contains(arr, str) {
-  for (var element of arr) {
+  for (let element of arr) {
     if (element === str) {
       return true;
     }
@@ -261,8 +261,8 @@ function contains(arr, str) {
 //
 // Tip: Use Google to learn more about calculating the distance.
 function distance(point1, point2) {
-  var xSquared = Math.pow(point1.x - point2.x, 2);
-  var ySquared = Math.pow(point1.y - point2.y, 2);
+  const xSquared = Math.pow(point1.x - point2.x, 2);
+  const ySquared = Math.pow(point1.y - point2.y, 2);
 
   return Math.sqrt(xSquared + ySquared);
 }
@@ -274,13 +274,13 @@ function distance(point1, point2) {
 // Return a new object that has the key-value pairs of both objects. For
 // example, given { a: 1 } and { b: 2 }, then return { a: 1, b: 2 }.
 function combine(obj1, obj2) {
-  var result = {};
+  let result = {};
 
-  for (var key in obj1) {
+  for (let key in obj1) {
     result[key] = obj1[key];
   }
 
-  for (var key in obj2) {
+  for (let key in obj2) {
     result[key] = obj2[key];
   }
 
@@ -296,10 +296,10 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  var result = {};
-  var value;
+  let result = {};
+  let value;
 
-  for (var key in obj) {
+  for (let key in obj) {
     value = obj[key];
     result[value] = key;
   }
@@ -313,9 +313,9 @@ function invert(obj) {
 // Return an array of the values of the object. For example, given
 // { a: 1, b: 2, c: 3 }, then return [1, 2, 3].
 function values(obj) {
-  var result = [];
+  let result = [];
 
-  for (var key in obj) {
+  for (let key in obj) {
     result.push(obj[key]);
   }
 
@@ -329,8 +329,8 @@ function values(obj) {
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 function toPairs(obj) {
-  var result = [];
-  var pair;
+  let result = [];
+  let pair;
 
   for (var key in obj) {
     pair = [key, obj[key]];
@@ -347,9 +347,9 @@ function toPairs(obj) {
 // argument. For example, given [['a', 1], ['b', 2]], then return
 // { a: 1, b: 2 }.
 function fromPairs(arr) {
-  var result = {};
+  let result = {};
 
-  for (var pair of arr) {
+  for (let pair of arr) {
     result[pair[0]] = pair[1];
   }
 

@@ -6,7 +6,7 @@
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
 function bigSum() {
-  var sum = 0;
+  let sum = 0;
 
   for (var i = 0; i < arguments.length; i++) {
     sum += arguments[i];
@@ -30,7 +30,7 @@ function bigSum() {
 //
 // and the key 'name', then return ['moe', 'larry', 'curly'].
 function pluck(arr, key) {
-  var result = [];
+  let result = [];
 
   for (var obj of arr) {
     result.push(obj[key])
@@ -47,10 +47,10 @@ function pluck(arr, key) {
 // { name: 'moe', age: 50, id: 1 } and ['name', 'age'], then return
 // { name: 'moe', age: 50 }.
 function pick(obj, keys) {
-  var result = {};
-  var key;
+  let result = {};
+  let key;
 
-  for (var i = 0; i < keys.length; i++) {
+  for (let i = 0; i < keys.length; i++) {
     key = keys[i];
     result[key] = obj[key];
   }
@@ -65,7 +65,7 @@ function pick(obj, keys) {
 // Return a new array that contains all the numbers in each array still sorted.
 // For example, given [1, 3, 5] and [2, 4], then return [1, 2, 3, 4, 5].
 function merge(arr1, arr2) {
-  var output = [];
+  let output = [];
 
   while (arr1.length > 0 && arr2.length > 0) {
     if (arr1[0] < arr2[0]) {
@@ -93,9 +93,9 @@ function merge(arr1, arr2) {
 // duplicates. For example, given ['a', 'b', 'a', 'c'], then return
 // ['a', 'b', 'c'].
 function unique(arr) {
-  var map = {};
+  let map = {};
 
-  for (var element of arr) {
+  for (let element of arr) {
     map[element] = true;
   }
 

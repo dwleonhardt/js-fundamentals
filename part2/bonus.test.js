@@ -1,5 +1,5 @@
 window.onload = function() {
-  var assert = chai.assert;
+  const assert = chai.assert;
   mocha.setup('tdd');
 
   suite('bigSum', function() {
