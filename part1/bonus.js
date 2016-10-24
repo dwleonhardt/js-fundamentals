@@ -74,7 +74,7 @@ function caesarShiftInt(integer) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
 function caesarShiftChar(char) {
-  var charCode = char.toLowerCase().charCodeAt(0);
+  var charCode = char.toLowerCase().codePointAt(0);
 
   if (charCode < 97 || charCode > 122) {
     return char;
