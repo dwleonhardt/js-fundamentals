@@ -29,6 +29,36 @@ function sumAndProduct(x, y, z) {
   return (x + y) * z;
 }
 
+// Define a function named averageMovieReview that takes three arguments
+//    rachel (number between 0 and 5)
+//    roger (number between 0 and 5)
+//    jake (number between 0 and 5)
+//
+// Return the average of the three arguments. For example, given 2, 2, and 5,
+// then return 3.
+function averageMovieReview(rachel, roger, jake) {
+  return (rachel + roger + jake) / 3;
+}
+
+// Define a function named weightedAverageMovieReview that takes three arguments
+//    rachel (number between 0 and 5)
+//    roger (number between 0 and 5)
+//    jake (number between 0 and 5)
+//
+// Return the weighted average of the three arguments with the following weights
+//    Rachel's weight is 0.25
+//    Roger's weight is 1
+//    Jake's weight is 2.2
+//
+// For example, given 2, 2, and 5, with the above weights, then return 4.5
+function weightedAverageMovieReview(rachel, roger, jake) {
+  const weightedRachel = 0.25 * rachel;
+  const weightedRoger = 1 * roger;
+  const weightedJake = 2.2 * jake;
+
+  return averageMovieReview(weightedRachel, weightedRoger, weightedJake);
+}
+
 // Define a function named roundUp that takes one argument
 //    decimal (number)
 //
