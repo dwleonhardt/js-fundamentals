@@ -26,6 +26,22 @@ window.onload = function() {
     });
   });
 
+  suite('weightedAverage', function() {
+    test('calculates the weighted average movie review', function() {
+      assert.strictEqual(weightedAverageMovieReview(2, 2, 5), 4.5);
+      assert.strictEqual(weightedAverageMovieReview(1.5, 2.5, 4.2), 4.038333333333334);
+      assert.strictEqual(weightedAverageMovieReview(5, 5, 5), 5.75);
+    });
+  });
+
+  suite('roundUp', function() {
+    test('rounds the number up to the nearest integer', function() {
+      assert.strictEqual(roundUp(2.1), 3);
+      assert.strictEqual(roundUp(4.7), 5);
+      assert.strictEqual(roundUp(6.0), 6);
+    });
+  });
+
   suite('roundUp', function() {
     test('rounds the number up to the nearest integer', function() {
       assert.strictEqual(roundUp(2.1), 3);
