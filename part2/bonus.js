@@ -95,7 +95,7 @@ function merge(arr1, arr2) {
 function unique(arr) {
   const map = {};
 
-  for (let element of arr) {
+  for (const element of arr) {
     map[element] = true;
   }
 
