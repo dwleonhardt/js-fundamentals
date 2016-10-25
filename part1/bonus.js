@@ -31,7 +31,7 @@ It'll take a few steps to solve this cipher. Have fun!
 //    Throw an error with the message 'Error: integer too low'
 //
 // If the integer is greater than 122
-//    Throw an error with the message 'Error: integer too low'
+//    Throw an error with the message 'Error: integer too high'
 //
 // If the integer + 13 would be greater than 122, the Unicode value for 'z'
 //    Return an integer that is "wrapped" around
