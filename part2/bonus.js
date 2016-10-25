@@ -8,7 +8,7 @@
 function bigSum() {
   let sum = 0;
 
-  for (var i = 0; i < arguments.length; i++) {
+  for (let i = 0; i < arguments.length; i++) {
     sum += arguments[i];
   }
 
@@ -30,9 +30,9 @@ function bigSum() {
 //
 // and the key 'name', then return ['moe', 'larry', 'curly'].
 function pluck(arr, key) {
-  let result = [];
+  const result = [];
 
-  for (var obj of arr) {
+  for (const obj of arr) {
     result.push(obj[key])
   }
 
@@ -47,7 +47,7 @@ function pluck(arr, key) {
 // { name: 'moe', age: 50, id: 1 } and ['name', 'age'], then return
 // { name: 'moe', age: 50 }.
 function pick(obj, keys) {
-  let result = {};
+  const result = {};
   let key;
 
   for (let i = 0; i < keys.length; i++) {
@@ -65,7 +65,7 @@ function pick(obj, keys) {
 // Return a new array that contains all the numbers in each array still sorted.
 // For example, given [1, 3, 5] and [2, 4], then return [1, 2, 3, 4, 5].
 function merge(arr1, arr2) {
-  let output = [];
+  const output = [];
 
   while (arr1.length > 0 && arr2.length > 0) {
     if (arr1[0] < arr2[0]) {
@@ -93,7 +93,7 @@ function merge(arr1, arr2) {
 // duplicates. For example, given ['a', 'b', 'a', 'c'], then return
 // ['a', 'b', 'c'].
 function unique(arr) {
-  let map = {};
+  const map = {};
 
   for (let element of arr) {
     map[element] = true;
