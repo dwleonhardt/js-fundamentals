@@ -74,11 +74,18 @@ function repeat(str, times) {
 function filterPassingGrades(grades) {
   let result = [];
 
-  for (let i = 0; i < grades.length; i++) {
-    if (grades[i] >= 70) {
-      result.push(grades[i]);
+  for (const grade of grades) {
+    if (grade >= 70) {
+      result.push(grade);
     }
   }
+
+  // or
+  // for (let i = 0; i < grades.length; i++) {
+  //   if (grades[i] >= 70) {
+  //     result.push(grades[i]);
+  //   }
+  // }
 
   return result;
 
@@ -104,6 +111,9 @@ function filterPassingGrades(grades) {
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
   let result = [];
+
+
+
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === from) {
@@ -131,7 +141,7 @@ function replace(arr, from, to) {
 function flatten(arr) {
   let result = [];
 
-  for (let element of arr) {
+  for (const element of arr) {
     result = result.concat(element);
   }
 
@@ -148,9 +158,14 @@ function flatten(arr) {
 function max(arr) {
   let val = -Infinity
 
-  for (let i = 0; i < arr.length; i++) {
-    val = Math.max(val, arr[i]);
+  for (const i of arr) {
+    val = Math.max(val, i);
   }
+
+  // or
+  // for (let i = 0; i < arr.length; i++) {
+  //   val = Math.max(val, arr[i]);
+  // }
 
   return val;
 
@@ -171,9 +186,14 @@ function max(arr) {
 function min(arr) {
   let val = Infinity
 
-  for (let i = 0; i < arr.length; i++) {
-    val = Math.min(val, arr[i]);
+  for (const i of arr) {
+    val = Math.min(val, i);
   }
+
+  // or
+  // for (let i = 0; i < arr.length; i++) {
+  //   val = Math.min(val, arr[i]);
+  // }
 
   return val;
 
@@ -233,7 +253,7 @@ function median(arr) {
 //
 // Return true if that string exists in the array, otherwise false.
 function contains(arr, str) {
-  for (let element of arr) {
+  for (const element of arr) {
     if (element === str) {
       return true;
     }
@@ -276,11 +296,11 @@ function distance(point1, point2) {
 function combine(obj1, obj2) {
   let result = {};
 
-  for (let key in obj1) {
+  for (const key in obj1) {
     result[key] = obj1[key];
   }
 
-  for (let key in obj2) {
+  for (const key in obj2) {
     result[key] = obj2[key];
   }
 
@@ -299,7 +319,7 @@ function invert(obj) {
   let result = {};
   let value;
 
-  for (let key in obj) {
+  for (const key in obj) {
     value = obj[key];
     result[value] = key;
   }
@@ -315,7 +335,7 @@ function invert(obj) {
 function values(obj) {
   let result = [];
 
-  for (let key in obj) {
+  for (const key in obj) {
     result.push(obj[key]);
   }
 
@@ -332,7 +352,7 @@ function toPairs(obj) {
   let result = [];
   let pair;
 
-  for (var key in obj) {
+  for (const key in obj) {
     pair = [key, obj[key]];
     result.push(pair);
   }
@@ -349,7 +369,7 @@ function toPairs(obj) {
 function fromPairs(arr) {
   let result = {};
 
-  for (let pair of arr) {
+  for (const pair of arr) {
     result[pair[0]] = pair[1];
   }
 
