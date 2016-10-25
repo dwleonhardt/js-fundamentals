@@ -126,9 +126,9 @@ function greet(firstName, lastName) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
 function toSentence(word1, word2, word3, oxfordComma) {
   if (oxfordComma) {
-    return word1 + ', ' + word2 + ', and ' + word3 + '.';
+    return `${word1}, ${word2}, and ${word3}.`;
   } else {
-    return word1 + ', ' + word2 + ' and ' + word3 + '.';
+    return `${word1}, ${word2} and ${word3}.`;
   }
 }
 
@@ -146,25 +146,25 @@ function toSentence(word1, word2, word3, oxfordComma) {
 function toRoman(arabic) {
   switch (arabic) {
     case 1:
-      return "I";
+      return 'I';
     case 2:
-      return "II";
+      return 'II';
     case 3:
-      return "III";
+      return 'III';
     case 4:
-      return "IV";
+      return 'IV';
     case 5:
-      return "V";
+      return 'V';
     case 6:
-      return "VI";
+      return 'VI';
     case 7:
-      return "VII";
+      return 'VII';
     case 8:
-      return "VIII";
+      return 'VIII';
     case 9:
-      return "IX";
+      return 'IX';
     case 10:
-      return "X";
+      return 'X';
     default:
       return null;
   }
