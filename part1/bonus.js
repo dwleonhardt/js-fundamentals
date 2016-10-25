@@ -80,13 +80,13 @@ function caesarShiftInt(integer) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint
 
 function caesarShiftChar(char) {
-  const charCode = char.toLowerCase().codePointAt(0);
+  const codePoint = char.toLowerCase().codePointAt(0);
 
-  if (charCode < 97 || charCode > 122) {
+  if (codePoint < 97 || codePoint > 122) {
     return char;
   }
 
-  return String.fromCharCode(caesarShiftInt(charCode));
+  return String.fromCodePoint(caesarShiftInt(codePoint));
 }
 
 // Define a function named encodeMessage that takes a one argument
