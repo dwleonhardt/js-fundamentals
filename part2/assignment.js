@@ -72,7 +72,7 @@ function repeat(str, times) {
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
 function filterPassingGrades(grades) {
-  let result = [];
+  const result = [];
 
   for (const grade of grades) {
     if (grade >= 70) {
@@ -80,26 +80,16 @@ function filterPassingGrades(grades) {
     }
   }
 
-  // or
+  return result;
+
+  // or...
   // for (let i = 0; i < grades.length; i++) {
   //   if (grades[i] >= 70) {
   //     result.push(grades[i]);
   //   }
   // }
-
-  return result;
-
-  // or...
-  // var result = [];
-  //
-  // for (var grade of grades) {
-  //   if (grade >= 70) {
-  //     result.push(grade);
-  //   }
-  // }
   //
   // return result;
-
 }
 
 // Define a function named replace that takes in three arguments.
@@ -110,10 +100,7 @@ function filterPassingGrades(grades) {
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
-  let result = [];
-
-
-
+  const result = [];
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === from) {
@@ -158,19 +145,11 @@ function flatten(arr) {
 function max(arr) {
   let val = -Infinity
 
-  for (const i of arr) {
-    val = Math.max(val, i);
+  for (const element of arr) {
+    val = Math.max(val, element);
   }
 
-  // or
-  // for (let i = 0; i < arr.length; i++) {
-  //   val = Math.max(val, arr[i]);
-  // }
-
   return val;
-
-  // or...
-  // return Math.max.apply(null, arr);
 
   // or...
   // return Math.max(...arr);
@@ -186,19 +165,11 @@ function max(arr) {
 function min(arr) {
   let val = Infinity
 
-  for (const i of arr) {
-    val = Math.min(val, i);
+  for (const element of arr) {
+    val = Math.min(val, element);
   }
 
-  // or
-  // for (let i = 0; i < arr.length; i++) {
-  //   val = Math.min(val, arr[i]);
-  // }
-
   return val;
-
-  // or...
-  // return Math.min.apply(null, arr);
 
   // or...
   // return Math.min(...arr);
@@ -242,7 +213,8 @@ function median(arr) {
     const upper = sorted[sorted.length / 2];
 
     return mean([lower, upper]);
-  } else {
+  }
+  else {
     return sorted[Math.floor(sorted.length / 2)];
   }
 }
@@ -294,7 +266,7 @@ function distance(point1, point2) {
 // Return a new object that has the key-value pairs of both objects. For
 // example, given { a: 1 } and { b: 2 }, then return { a: 1, b: 2 }.
 function combine(obj1, obj2) {
-  let result = {};
+  const result = {};
 
   for (const key in obj1) {
     result[key] = obj1[key];
@@ -316,7 +288,7 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  let result = {};
+  const result = {};
   let value;
 
   for (const key in obj) {
@@ -333,7 +305,7 @@ function invert(obj) {
 // Return an array of the values of the object. For example, given
 // { a: 1, b: 2, c: 3 }, then return [1, 2, 3].
 function values(obj) {
-  let result = [];
+  const result = [];
 
   for (const key in obj) {
     result.push(obj[key]);
@@ -349,7 +321,7 @@ function values(obj) {
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 function toPairs(obj) {
-  let result = [];
+  const result = [];
   let pair;
 
   for (const key in obj) {
@@ -367,7 +339,7 @@ function toPairs(obj) {
 // argument. For example, given [['a', 1], ['b', 2]], then return
 // { a: 1, b: 2 }.
 function fromPairs(arr) {
-  let result = {};
+  const result = {};
 
   for (const pair of arr) {
     result[pair[0]] = pair[1];
