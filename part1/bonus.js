@@ -42,7 +42,6 @@ It'll take a few steps to solve this cipher. Have fun!
 // For example, given 97, then return 110. And given 110, then return 97.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
-
 function caesarShiftInt(integer) {
   const lowest = 97;
   const highest = 122;
@@ -78,7 +77,6 @@ function caesarShiftInt(integer) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint
-
 function caesarShiftChar(char) {
   const codePoint = char.toLowerCase().codePointAt(0);
 
